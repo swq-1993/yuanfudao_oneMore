@@ -1,0 +1,79 @@
+x:154 y:481 width:35 height:32 class_idx:100 text:今
+x:729 y:680 width:32 height:33 class_idx:100 text:弹
+x:151 y:511 width:39 height:33 class_idx:100 text:隐
+x:153 y:576 width:36 height:30 class_idx:100 text:今
+x:153 y:603 width:36 height:31 class_idx:100 text:一
+x:151 y:633 width:37 height:30 class_idx:100 text:命
+x:153 y:663 width:36 height:30 class_idx:100 text:这
+x:151 y:694 width:37 height:27 class_idx:100 text:如
+x:778 y:688 width:27 height:30 class_idx:100 text:这
+x:151 y:720 width:37 height:29 class_idx:100 text:离
+x:773 y:719 width:32 height:30 class_idx:100 text:馋
+x:723 y:739 width:28 height:29 class_idx:100 text:回
+x:150 y:750 width:34 height:28 class_idx:100 text:言
+x:768 y:751 width:33 height:30 class_idx:100 text:这
+x:153 y:779 width:33 height:27 class_idx:100 text:答
+x:764 y:783 width:35 height:30 class_idx:100 text:三
+x:153 y:805 width:32 height:29 class_idx:100 text:圈
+x:760 y:810 width:35 height:30 class_idx:100 text:二
+x:149 y:835 width:17 height:15 class_idx:100 text:9
+x:756 y:843 width:34 height:31 class_idx:100 text:三
+x:95 y:869 width:31 height:24 class_idx:100 text:一
+x:533 y:965 width:20 height:26 class_idx:100 text:I
+x:155 y:283 width:38 height:30 class_idx:100 text:问
+x:156 y:311 width:33 height:33 class_idx:100 text:一
+x:155 y:253 width:38 height:31 class_idx:100 text:地
+x:93 y:355 width:37 height:33 class_idx:100 text:中
+x:91 y:386 width:39 height:34 class_idx:100 text:中
+x:155 y:388 width:36 height:32 class_idx:100 text:三
+x:154 y:450 width:32 height:33 class_idx:100 text:十
+x:153 y:420 width:38 height:33 class_idx:100 text:总
+x:199 y:1051 width:91 height:64 class_idx:101
+x:279 y:1039 width:67 height:65 class_idx:101
+x:345 y:1028 width:85 height:68 class_idx:101
+x:475 y:540 width:46 height:48 class_idx:101
+x:574 y:1011 width:64 height:54 class_idx:101
+x:91 y:516 width:38 height:24 class_idx:102
+x:94 y:1080 width:34 height:24 class_idx:104 text:60
+x:538 y:840 width:25 height:24 class_idx:104 text:+
+x:304 y:266 width:61 height:32 class_idx:104 text:7000000
+x:306 y:853 width:23 height:31 class_idx:104 text:+
+x:31 y:859 width:34 height:50 class_idx:104 text:=
+x:35 y:1074 width:33 height:50 class_idx:104 text:=
+x:534 y:901 width:31 height:27 class_idx:104 text:0.0000000
+x:304 y:991 width:20 height:25 class_idx:104 text:11
+x:464 y:906 width:34 height:32 class_idx:104 text:5
+x:300 y:925 width:34 height:25 class_idx:104 text:-
+x:378 y:920 width:30 height:24 class_idx:104 text:-
+x:451 y:1034 width:32 height:44 class_idx:104 text:8)
+x:510 y:1019 width:66 height:54 class_idx:104 text:8400000
+x:225 y:928 width:31 height:32 class_idx:104 text:=
+x:28 y:499 width:36 height:59 class_idx:104 text:=
+x:94 y:974 width:34 height:24 class_idx:104 text:cm
+x:33 y:970 width:33 height:46 class_idx:104 text:8
+x:554 y:289 width:69 height:31 class_idx:104 text:6000000
+x:574 y:473 width:21 height:30 class_idx:104 text:1
+x:324 y:461 width:16 height:27 class_idx:104 text:11
+x:155 y:545 width:33 height:26 class_idx:104 text:6m
+x:225 y:533 width:49 height:43 class_idx:104 text:7
+x:305 y:533 width:46 height:45 class_idx:104 text:$FRACS$10/20$FRACE$
+x:383 y:519 width:45 height:70 class_idx:104 text:5
+x:546 y:539 width:45 height:54 class_idx:104 text:1
+x:629 y:534 width:40 height:65 class_idx:104 text:$FRACS$1/8$FRACE$
+x:94 y:635 width:34 height:26 class_idx:104 text:65
+x:649 y:403 width:30 height:32 class_idx:104 text:=
+x:30 y:626 width:31 height:52 class_idx:104 text:=
+x:576 y:391 width:30 height:44 class_idx:104 text:2
+x:500 y:394 width:33 height:29 class_idx:104 text:<
+x:403 y:384 width:36 height:36 class_idx:104 text:$FRACS$8/9$FRACE$
+x:320 y:379 width:35 height:36 class_idx:104 text:$FRACS$1$YOU$1/5$FRACE$
+x:236 y:373 width:35 height:38 class_idx:104 text:=
+x:94 y:754 width:32 height:25 class_idx:104 text:0.05
+x:158 y:343 width:31 height:43 class_idx:104 text:=
+x:30 y:748 width:33 height:47 class_idx:104 text:8
+x:576 y:326 width:27 height:25 class_idx:104 text:*
+x:321 y:306 width:27 height:25 class_idx:104 text:*
+x:526 y:805 width:53 height:26 class_idx:104 text:400000000
+x:283 y:813 width:71 height:37 class_idx:104 text:$FRACS$15/15$FRACE$
+x:9 y:129 width:194 height:1101 class_idx:200
+x:189 y:215 width:504 height:928 class_idx:200

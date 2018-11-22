@@ -1,0 +1,30 @@
+x:733 y:430 width:41 height:38 class_idx:100 text:三
+x:550 y:439 width:38 height:37 class_idx:100 text:口
+x:584 y:434 width:43 height:40 class_idx:100 text:算
+x:475 y:448 width:39 height:40 class_idx:100 text:数
+x:510 y:441 width:42 height:44 class_idx:100 text:学
+x:401 y:458 width:41 height:38 class_idx:100 text:小
+x:438 y:451 width:40 height:43 class_idx:100 text:学
+x:334 y:1081 width:70 height:64 class_idx:101
+x:435 y:776 width:103 height:77 class_idx:101
+x:452 y:698 width:85 height:71 class_idx:101
+x:440 y:621 width:87 height:68 class_idx:101
+x:737 y:1076 width:96 height:64 class_idx:101
+x:315 y:633 width:30 height:32 class_idx:104 text:*
+x:348 y:624 width:30 height:42 class_idx:104 text:7
+x:145 y:1080 width:33 height:43 class_idx:104 text:*
+x:209 y:653 width:57 height:40 class_idx:104 text:24
+x:346 y:696 width:34 height:45 class_idx:104 text:5
+x:315 y:708 width:33 height:32 class_idx:104 text:*
+x:189 y:725 width:94 height:51 class_idx:104 text:135
+x:350 y:774 width:31 height:46 class_idx:104 text:6
+x:314 y:784 width:35 height:34 class_idx:104 text:*
+x:189 y:795 width:91 height:58 class_idx:104 text:466
+x:755 y:1056 width:40 height:22 class_idx:104 text:0.0
+x:183 y:1071 width:32 height:48 class_idx:104 text:6
+x:537 y:1075 width:36 height:36 class_idx:104 text:*
+x:570 y:1069 width:44 height:45 class_idx:104 text:3
+x:154 y:608 width:375 height:248 class_idx:206
+x:727 y:1175 width:126 height:103 class_idx:300
+x:320 y:1186 width:128 height:90 class_idx:300
+x:717 y:988 width:123 height:83 class_idx:300

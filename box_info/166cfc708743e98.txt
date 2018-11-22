@@ -1,0 +1,21 @@
+x:625 y:1174 width:60 height:104 class_idx:100 text:个
+x:59 y:1135 width:67 height:81 class_idx:100 text:辆
+x:746 y:901 width:65 height:73 class_idx:100 text:数
+x:683 y:899 width:66 height:71 class_idx:100 text:位
+x:629 y:920 width:49 height:28 class_idx:100 text:一
+x:558 y:899 width:55 height:69 class_idx:100 text:用
+x:488 y:896 width:63 height:65 class_idx:100 text:现
+x:429 y:894 width:56 height:65 class_idx:100 text:发
+x:365 y:891 width:65 height:69 class_idx:100 text:你
+x:565 y:150 width:73 height:69 class_idx:100 text:练
+x:531 y:509 width:59 height:91 class_idx:101
+x:760 y:120 width:68 height:66 class_idx:102
+x:138 y:538 width:118 height:72 class_idx:104 text:200
+x:101 y:645 width:137 height:65 class_idx:104 text:2000
+x:639 y:506 width:51 height:77 class_idx:104 text:0
+x:189 y:451 width:80 height:60 class_idx:104 text:20
+x:386 y:376 width:38 height:54 class_idx:104 text:4
+x:348 y:389 width:37 height:39 class_idx:104 text:*
+x:46 y:358 width:710 height:456 class_idx:206
+x:40 y:759 width:225 height:304 class_idx:300
+x:504 y:506 width:212 height:95 class_idx:300

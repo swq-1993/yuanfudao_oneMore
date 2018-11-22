@@ -1,0 +1,57 @@
+x:554 y:386 width:36 height:33 class_idx:100 text:日
+x:199 y:531 width:15 height:22 class_idx:100 text:，
+x:275 y:624 width:49 height:49 class_idx:101
+x:643 y:623 width:44 height:45 class_idx:101
+x:279 y:673 width:54 height:66 class_idx:101
+x:643 y:679 width:44 height:49 class_idx:101
+x:261 y:759 width:62 height:59 class_idx:101
+x:648 y:569 width:45 height:46 class_idx:101
+x:645 y:768 width:47 height:50 class_idx:101
+x:278 y:564 width:60 height:46 class_idx:101
+x:269 y:823 width:42 height:50 class_idx:101
+x:640 y:508 width:49 height:53 class_idx:101
+x:653 y:828 width:47 height:50 class_idx:101
+x:276 y:511 width:58 height:49 class_idx:101
+x:658 y:886 width:30 height:44 class_idx:101
+x:266 y:888 width:49 height:47 class_idx:101
+x:266 y:938 width:43 height:60 class_idx:101
+x:658 y:950 width:31 height:54 class_idx:101
+x:794 y:760 width:34 height:34 class_idx:102
+x:39 y:750 width:34 height:34 class_idx:102
+x:416 y:758 width:34 height:32 class_idx:102
+x:63 y:501 width:32 height:32 class_idx:102
+x:420 y:505 width:33 height:33 class_idx:102
+x:782 y:505 width:31 height:33 class_idx:102
+x:170 y:624 width:24 height:30 class_idx:104 text:4
+x:543 y:956 width:22 height:35 class_idx:104 text:7
+x:175 y:511 width:25 height:34 class_idx:104 text:2
+x:156 y:949 width:23 height:39 class_idx:104 text:6
+x:542 y:896 width:23 height:32 class_idx:104 text:6
+x:159 y:890 width:22 height:35 class_idx:104 text:4
+x:602 y:868 width:25 height:23 class_idx:104 text:=
+x:482 y:864 width:23 height:27 class_idx:104 text:/
+x:445 y:860 width:38 height:31 class_idx:104 text:42
+x:216 y:863 width:27 height:23 class_idx:104 text:=
+x:98 y:860 width:25 height:26 class_idx:104 text:/
+x:61 y:856 width:35 height:30 class_idx:104 text:48
+x:537 y:516 width:25 height:34 class_idx:104 text:2
+x:175 y:568 width:20 height:31 class_idx:104 text:3
+x:538 y:631 width:22 height:34 class_idx:104 text:5
+x:166 y:679 width:25 height:34 class_idx:104 text:6
+x:594 y:608 width:25 height:22 class_idx:104 text:=
+x:537 y:686 width:26 height:33 class_idx:104 text:6
+x:482 y:606 width:21 height:24 class_idx:104 text:/
+x:445 y:601 width:37 height:29 class_idx:104 text:60
+x:229 y:600 width:26 height:24 class_idx:104 text:=
+x:114 y:596 width:25 height:24 class_idx:104 text:/
+x:161 y:768 width:25 height:35 class_idx:104 text:2
+x:79 y:591 width:35 height:30 class_idx:104 text:84
+x:538 y:775 width:30 height:33 class_idx:104 text:2
+x:535 y:578 width:27 height:27 class_idx:104 text:4
+x:159 y:829 width:22 height:34 class_idx:104 text:3
+x:540 y:835 width:24 height:33 class_idx:104 text:3
+x:49 y:465 width:674 height:588 class_idx:203
+x:50 y:496 width:284 height:227 class_idx:206
+x:452 y:511 width:272 height:205 class_idx:206
+x:46 y:769 width:292 height:205 class_idx:206
+x:434 y:783 width:311 height:226 class_idx:206

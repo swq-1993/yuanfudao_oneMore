@@ -1,0 +1,84 @@
+x:711 y:993 width:45 height:61 class_idx:100 text:多
+x:615 y:996 width:52 height:55 class_idx:100 text:表
+x:397 y:573 width:39 height:47 class_idx:100 text:多
+x:318 y:580 width:42 height:45 class_idx:100 text:能
+x:478 y:995 width:46 height:61 class_idx:100 text:色
+x:358 y:575 width:40 height:48 class_idx:100 text:装
+x:51 y:610 width:35 height:38 class_idx:102
+x:175 y:1000 width:47 height:51 class_idx:100 text:方
+x:431 y:216 width:40 height:43 class_idx:100 text:少
+x:467 y:213 width:41 height:41 class_idx:100 text:盒
+x:195 y:591 width:37 height:52 class_idx:100 text:装
+x:277 y:195 width:36 height:36 class_idx:100 text:球
+x:175 y:264 width:37 height:39 class_idx:100 text:个
+x:344 y:180 width:36 height:38 class_idx:100 text:在
+x:432 y:569 width:45 height:49 class_idx:100 text:少
+x:310 y:188 width:37 height:38 class_idx:100 text:装
+x:395 y:224 width:37 height:40 class_idx:100 text:多
+x:523 y:995 width:46 height:60 class_idx:100 text:部
+x:209 y:258 width:38 height:41 class_idx:100 text:装
+x:473 y:566 width:43 height:45 class_idx:100 text:盒
+x:85 y:230 width:35 height:35 class_idx:100 text:把
+x:113 y:275 width:35 height:36 class_idx:100 text:每
+x:662 y:995 width:50 height:56 class_idx:100 text:示
+x:568 y:993 width:54 height:65 class_idx:100 text:分
+x:145 y:88 width:24 height:26 class_idx:104 text:/
+x:263 y:1001 width:40 height:48 class_idx:100 text:表
+x:434 y:999 width:45 height:55 class_idx:100 text:涂
+x:449 y:161 width:38 height:37 class_idx:100 text:里
+x:275 y:248 width:39 height:38 class_idx:100 text:盒
+x:245 y:201 width:34 height:34 class_idx:100 text:乓
+x:0 y:981 width:792 height:299 class_idx:202
+x:79 y:283 width:30 height:31 class_idx:102
+x:119 y:221 width:57 height:40 class_idx:104 text:240
+x:103 y:1000 width:40 height:50 class_idx:100 text:的
+x:90 y:605 width:40 height:43 class_idx:100 text:每
+x:360 y:231 width:38 height:42 class_idx:100 text:装
+x:299 y:999 width:45 height:51 class_idx:100 text:示
+x:265 y:590 width:42 height:43 class_idx:100 text:盒
+x:66 y:1000 width:39 height:51 class_idx:100 text:面
+x:212 y:206 width:35 height:37 class_idx:100 text:乒
+x:143 y:998 width:37 height:53 class_idx:100 text:长
+x:325 y:236 width:38 height:40 class_idx:100 text:能
+x:93 y:91 width:51 height:32 class_idx:104 text:400
+x:273 y:103 width:54 height:48 class_idx:101
+x:413 y:168 width:39 height:37 class_idx:100 text:盒
+x:159 y:598 width:36 height:42 class_idx:100 text:个
+x:186 y:130 width:24 height:33 class_idx:104 text:8
+x:178 y:211 width:35 height:42 class_idx:100 text:个
+x:69 y:824 width:57 height:80 class_idx:101
+x:378 y:174 width:36 height:39 class_idx:100 text:纸
+x:25 y:998 width:43 height:52 class_idx:100 text:下
+x:424 y:16 width:59 height:37 class_idx:104 text:240
+x:149 y:271 width:24 height:34 class_idx:104 text:3
+x:191 y:75 width:23 height:33 class_idx:104 text:5
+x:340 y:999 width:81 height:49 class_idx:104 text:360
+x:220 y:1001 width:43 height:49 class_idx:100 text:形
+x:756 y:993 width:39 height:63 class_idx:100 text:少
+x:240 y:70 width:23 height:24 class_idx:104 text:=
+x:487 y:13 width:24 height:32 class_idx:104 text:/
+x:514 y:569 width:23 height:40 class_idx:100 text:字
+x:130 y:601 width:26 height:43 class_idx:104 text:6
+x:539 y:64 width:27 height:35 class_idx:104 text:8
+x:417 y:1083 width:369 height:178 class_idx:300
+x:70 y:483 width:45 height:60 class_idx:101
+x:39 y:238 width:46 height:33 class_idx:102
+x:272 y:43 width:62 height:51 class_idx:101
+x:536 y:8 width:31 height:31 class_idx:104 text:6
+x:304 y:609 width:15 height:20 class_idx:100 text:，
+x:312 y:263 width:15 height:18 class_idx:100 text:，
+x:417 y:1029 width:15 height:25 class_idx:100 text:，
+x:507 y:214 width:19 height:36 class_idx:100 text:字
+x:184 y:448 width:53 height:81 class_idx:101
+x:244 y:261 width:34 height:27 class_idx:100 text:一
+x:95 y:0 width:257 height:195 class_idx:206
+x:593 y:13 width:27 height:26 class_idx:104 text:=
+x:487 y:175 width:17 height:19 class_idx:100 text:O
+x:233 y:606 width:34 height:20 class_idx:100 text:一
+x:191 y:18 width:26 height:35 class_idx:102
+x:26 y:139 width:545 height:809 class_idx:200
+x:292 y:451 width:50 height:75 class_idx:101
+x:423 y:0 width:292 height:126 class_idx:200
+x:243 y:455 width:50 height:64 class_idx:101
+x:628 y:64 width:59 height:46 class_idx:101
+x:267 y:0 width:70 height:49 class_idx:104 text:200000000

@@ -1,0 +1,35 @@
+x:158 y:891 width:717 height:389 class_idx:202
+x:257 y:655 width:56 height:46 class_idx:104 text:45
+x:369 y:655 width:51 height:46 class_idx:104 text:25
+x:268 y:969 width:47 height:47 class_idx:100 text:看
+x:365 y:591 width:53 height:44 class_idx:104 text:30
+x:383 y:796 width:47 height:50 class_idx:101
+x:224 y:1008 width:420 height:137 class_idx:300
+x:767 y:580 width:45 height:48 class_idx:104 text:15
+x:362 y:525 width:51 height:46 class_idx:104 text:35
+x:760 y:520 width:45 height:43 class_idx:101
+x:310 y:660 width:47 height:31 class_idx:104 text:=
+x:778 y:646 width:45 height:42 class_idx:104 text:20
+x:373 y:724 width:55 height:47 class_idx:101
+x:478 y:650 width:50 height:50 class_idx:101
+x:797 y:781 width:48 height:43 class_idx:101
+x:393 y:951 width:47 height:48 class_idx:100 text:式
+x:325 y:375 width:37 height:38 class_idx:100 text:城
+x:319 y:935 width:30 height:28 class_idx:103
+x:214 y:1176 width:75 height:93 class_idx:300
+x:471 y:583 width:53 height:47 class_idx:101
+x:430 y:663 width:43 height:31 class_idx:104 text:=
+x:358 y:960 width:41 height:44 class_idx:100 text:列
+x:315 y:961 width:44 height:45 class_idx:100 text:图
+x:536 y:1030 width:56 height:83 class_idx:300
+x:239 y:1128 width:404 height:123 class_idx:300
+x:196 y:965 width:63 height:55 class_idx:100 text:九
+x:469 y:1144 width:70 height:90 class_idx:300
+x:539 y:1130 width:90 height:98 class_idx:300
+x:273 y:460 width:291 height:390 class_idx:206
+x:209 y:1060 width:78 height:93 class_idx:300
+x:707 y:496 width:209 height:349 class_idx:206
+x:252 y:359 width:37 height:52 class_idx:102
+x:477 y:703 width:67 height:66 class_idx:101
+x:292 y:376 width:36 height:33 class_idx:100 text:一
+x:359 y:388 width:23 height:31 class_idx:100 text:，

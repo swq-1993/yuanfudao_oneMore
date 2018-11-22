@@ -1,0 +1,48 @@
+x:483 y:243 width:41 height:42 class_idx:100 text:城
+x:317 y:94 width:40 height:47 class_idx:104 text:$PCT$
+x:126 y:108 width:403 height:1135 class_idx:203
+x:477 y:46 width:39 height:52 class_idx:100 text:斗
+x:484 y:318 width:40 height:42 class_idx:100 text:旅
+x:487 y:398 width:40 height:41 class_idx:100 text:燃
+x:487 y:359 width:39 height:37 class_idx:100 text:天
+x:45 y:144 width:56 height:59 class_idx:100 text:城
+x:43 y:78 width:67 height:58 class_idx:100 text:回
+x:43 y:236 width:57 height:62 class_idx:100 text:轴
+x:364 y:274 width:64 height:69 class_idx:101
+x:253 y:73 width:42 height:61 class_idx:104 text:$FRACS$15/60$FRACE$
+x:318 y:743 width:44 height:68 class_idx:104 text:+
+x:249 y:751 width:50 height:65 class_idx:104 text:9
+x:483 y:201 width:38 height:44 class_idx:100 text:一
+x:408 y:834 width:46 height:84 class_idx:104 text:$FRACS$1$YOU$1/5$FRACE$
+x:483 y:283 width:39 height:37 class_idx:100 text:14
+x:184 y:761 width:43 height:50 class_idx:104 text:9
+x:412 y:370 width:21 height:33 class_idx:104 text:1
+x:377 y:110 width:40 height:48 class_idx:104 text:$FRACS$4/46$FRACE$
+x:308 y:270 width:55 height:65 class_idx:104 text:=
+x:175 y:425 width:67 height:76 class_idx:101
+x:383 y:753 width:43 height:50 class_idx:104 text:=
+x:489 y:440 width:18 height:16 class_idx:100 text:G
+x:166 y:1175 width:82 height:80 class_idx:101
+x:404 y:191 width:30 height:29 class_idx:104 text:+
+x:252 y:435 width:56 height:75 class_idx:101
+x:313 y:444 width:54 height:65 class_idx:104 text:5
+x:313 y:1150 width:61 height:71 class_idx:101
+x:166 y:283 width:278 height:256 class_idx:300
+x:404 y:214 width:37 height:44 class_idx:104 text:$FRACS$2$YOU$3/5$FRACE$
+x:171 y:961 width:68 height:69 class_idx:101
+x:46 y:0 width:63 height:49 class_idx:100 text:四
+x:362 y:448 width:69 height:62 class_idx:101
+x:244 y:958 width:71 height:70 class_idx:104 text:=
+x:173 y:799 width:278 height:205 class_idx:300
+x:254 y:1174 width:59 height:62 class_idx:101
+x:187 y:60 width:43 height:50 class_idx:104 text:$FRACS$1/20$FRACE$
+x:418 y:1033 width:41 height:63 class_idx:104 text:+
+x:386 y:1131 width:61 height:73 class_idx:101
+x:476 y:114 width:43 height:45 class_idx:100 text:降
+x:376 y:928 width:67 height:93 class_idx:101
+x:166 y:961 width:69 height:87 class_idx:300
+x:166 y:241 width:67 height:69 class_idx:101
+x:41 y:291 width:27 height:22 class_idx:100 text:9
+x:313 y:948 width:61 height:75 class_idx:101
+x:175 y:985 width:269 height:238 class_idx:300
+x:477 y:158 width:45 height:41 class_idx:104 text:17

@@ -1,0 +1,22 @@
+x:588 y:294 width:47 height:49 class_idx:100 text:个
+x:640 y:293 width:43 height:50 class_idx:100 text:书
+x:686 y:293 width:43 height:43 class_idx:100 text:包
+x:731 y:293 width:57 height:46 class_idx:100 text:和
+x:785 y:303 width:48 height:23 class_idx:100 text:一
+x:493 y:301 width:42 height:47 class_idx:100 text:买
+x:535 y:309 width:53 height:27 class_idx:100 text:一
+x:320 y:605 width:116 height:81 class_idx:101
+x:329 y:523 width:97 height:81 class_idx:101
+x:630 y:510 width:100 height:83 class_idx:101
+x:620 y:609 width:106 height:92 class_idx:101
+x:645 y:705 width:56 height:85 class_idx:101
+x:88 y:946 width:93 height:59 class_idx:101
+x:63 y:700 width:77 height:58 class_idx:104 text:18
+x:69 y:526 width:81 height:55 class_idx:104 text:39
+x:66 y:614 width:82 height:62 class_idx:104 text:56
+x:500 y:474 width:88 height:64 class_idx:104 text:20
+x:459 y:494 width:42 height:24 class_idx:104 text:-
+x:241 y:483 width:34 height:52 class_idx:104 text:8
+x:195 y:489 width:43 height:37 class_idx:104 text:+
+x:29 y:474 width:714 height:387 class_idx:206
+x:38 y:643 width:418 height:175 class_idx:300

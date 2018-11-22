@@ -1,0 +1,36 @@
+x:800 y:253 width:50 height:51 class_idx:100 text:叫
+x:34 y:788 width:42 height:30 class_idx:100 text:任
+x:30 y:753 width:49 height:33 class_idx:100 text:加
+x:33 y:718 width:45 height:35 class_idx:100 text:选
+x:35 y:690 width:41 height:28 class_idx:100 text:二
+x:34 y:653 width:42 height:38 class_idx:100 text:回
+x:793 y:593 width:21 height:21 class_idx:100 text:O
+x:793 y:544 width:47 height:47 class_idx:100 text:13
+x:797 y:499 width:48 height:47 class_idx:100 text:二
+x:799 y:451 width:49 height:50 class_idx:100 text:解
+x:800 y:403 width:50 height:43 class_idx:100 text:冰
+x:31 y:816 width:45 height:37 class_idx:100 text:两
+x:802 y:355 width:47 height:44 class_idx:100 text:零
+x:804 y:306 width:48 height:43 class_idx:100 text:降
+x:349 y:253 width:40 height:40 class_idx:100 text:样
+x:804 y:209 width:48 height:46 class_idx:100 text:旁
+x:344 y:208 width:44 height:38 class_idx:100 text:2
+x:29 y:850 width:45 height:34 class_idx:100 text:律
+x:803 y:160 width:47 height:43 class_idx:100 text:迅
+x:340 y:166 width:45 height:42 class_idx:100 text:圈
+x:335 y:121 width:49 height:45 class_idx:100 text:部
+x:802 y:111 width:40 height:34 class_idx:102
+x:690 y:349 width:57 height:66 class_idx:104 text:$FRACS$10/63$FRACE$
+x:669 y:810 width:44 height:50 class_idx:104 text:$PCT$
+x:502 y:800 width:57 height:91 class_idx:104 text:$FRACS$1$YOU$1/4$FRACE$
+x:593 y:806 width:44 height:77 class_idx:104 text:63
+x:694 y:909 width:31 height:27 class_idx:104 text:$FRACS$1$YOU$1/4$FRACE$
+x:693 y:933 width:45 height:65 class_idx:104 text:$FRACS$1$YOU$1/5$FRACE$
+x:675 y:1076 width:33 height:34 class_idx:104 text:1
+x:695 y:310 width:40 height:35 class_idx:104 text:$FRACS$1$YOU$1/4$FRACE$
+x:579 y:219 width:48 height:35 class_idx:104 text:>
+x:665 y:189 width:50 height:70 class_idx:104 text:$FRACS$6/6$FRACE$
+x:484 y:153 width:49 height:31 class_idx:104 text:km
+x:405 y:81 width:412 height:1158 class_idx:202
+x:454 y:780 width:315 height:405 class_idx:206
+x:5 y:560 width:96 height:70 class_idx:300

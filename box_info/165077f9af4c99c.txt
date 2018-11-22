@@ -1,0 +1,122 @@
+x:129 y:845 width:16 height:20 class_idx:100 text:G
+x:190 y:515 width:15 height:19 class_idx:100 text:心
+x:159 y:499 width:34 height:35 class_idx:100 text:数
+x:129 y:498 width:32 height:36 class_idx:100 text:填
+x:99 y:499 width:32 height:36 class_idx:100 text:律
+x:69 y:499 width:32 height:35 class_idx:100 text:规
+x:38 y:499 width:33 height:35 class_idx:100 text:按
+x:96 y:829 width:35 height:36 class_idx:100 text:连
+x:68 y:840 width:30 height:14 class_idx:100 text:一
+x:128 y:218 width:15 height:18 class_idx:100 text:心
+x:66 y:210 width:32 height:23 class_idx:100 text:一
+x:95 y:199 width:35 height:36 class_idx:100 text:填
+x:36 y:200 width:35 height:38 class_idx:100 text:填
+x:35 y:830 width:34 height:34 class_idx:100 text:连
+x:209 y:133 width:35 height:37 class_idx:100 text:用
+x:527 y:126 width:36 height:39 class_idx:100 text:面
+x:494 y:125 width:35 height:43 class_idx:100 text:求
+x:321 y:129 width:39 height:39 class_idx:100 text:的
+x:459 y:126 width:38 height:40 class_idx:100 text:快
+x:358 y:130 width:35 height:38 class_idx:100 text:乘
+x:429 y:126 width:33 height:42 class_idx:100 text:口
+x:390 y:129 width:37 height:37 class_idx:100 text:法
+x:525 y:566 width:28 height:52 class_idx:101
+x:88 y:763 width:28 height:42 class_idx:101
+x:264 y:343 width:30 height:41 class_idx:101
+x:690 y:380 width:32 height:50 class_idx:101
+x:268 y:393 width:27 height:40 class_idx:101
+x:259 y:431 width:29 height:48 class_idx:101
+x:735 y:563 width:32 height:48 class_idx:101
+x:687 y:431 width:41 height:47 class_idx:101
+x:720 y:755 width:25 height:40 class_idx:101
+x:295 y:755 width:26 height:43 class_idx:101
+x:503 y:756 width:27 height:43 class_idx:101
+x:692 y:335 width:30 height:44 class_idx:101
+x:684 y:244 width:44 height:46 class_idx:101
+x:266 y:248 width:32 height:50 class_idx:101
+x:690 y:291 width:30 height:49 class_idx:101
+x:263 y:293 width:30 height:48 class_idx:101
+x:0 y:830 width:24 height:33 class_idx:102
+x:563 y:123 width:74 height:46 class_idx:102
+x:0 y:205 width:24 height:34 class_idx:102
+x:513 y:264 width:39 height:39 class_idx:102
+x:0 y:499 width:28 height:36 class_idx:102
+x:55 y:273 width:35 height:36 class_idx:102
+x:80 y:961 width:25 height:27 class_idx:104 text:/
+x:104 y:959 width:19 height:29 class_idx:104 text:3
+x:81 y:1031 width:20 height:24 class_idx:104 text:/
+x:59 y:888 width:36 height:33 class_idx:104 text:24
+x:58 y:954 width:21 height:36 class_idx:104 text:9
+x:722 y:953 width:35 height:32 class_idx:104 text:30
+x:777 y:886 width:22 height:33 class_idx:104 text:3
+x:96 y:894 width:24 height:26 class_idx:104 text:/
+x:757 y:891 width:21 height:24 class_idx:104 text:/
+x:720 y:885 width:37 height:34 class_idx:104 text:15
+x:415 y:888 width:25 height:32 class_idx:104 text:6
+x:119 y:889 width:21 height:32 class_idx:104 text:6
+x:745 y:1094 width:22 height:30 class_idx:104 text:/
+x:53 y:1165 width:23 height:33 class_idx:104 text:6
+x:783 y:1161 width:21 height:32 class_idx:104 text:4
+x:759 y:1165 width:26 height:28 class_idx:104 text:/
+x:723 y:1160 width:36 height:34 class_idx:104 text:16
+x:415 y:1161 width:27 height:35 class_idx:104 text:2
+x:415 y:1095 width:27 height:33 class_idx:104 text:3
+x:103 y:1094 width:18 height:34 class_idx:104 text:3
+x:80 y:1100 width:21 height:24 class_idx:104 text:*
+x:55 y:1094 width:21 height:34 class_idx:104 text:2
+x:765 y:1091 width:23 height:33 class_idx:104 text:2
+x:415 y:955 width:25 height:34 class_idx:104 text:5
+x:722 y:1090 width:21 height:34 class_idx:104 text:4
+x:743 y:1026 width:24 height:29 class_idx:104 text:/
+x:720 y:1024 width:22 height:35 class_idx:104 text:8
+x:415 y:1024 width:28 height:35 class_idx:104 text:4
+x:104 y:1028 width:16 height:28 class_idx:104 text:1
+x:116 y:581 width:23 height:32 class_idx:104 text:3
+x:58 y:1024 width:21 height:34 class_idx:104 text:5
+x:764 y:1021 width:21 height:35 class_idx:104 text:4
+x:779 y:954 width:21 height:35 class_idx:104 text:5
+x:757 y:960 width:22 height:24 class_idx:104 text:/
+x:569 y:341 width:38 height:37 class_idx:104 text:12
+x:116 y:396 width:24 height:32 class_idx:104 text:6
+x:575 y:389 width:25 height:35 class_idx:104 text:9
+x:638 y:346 width:24 height:32 class_idx:104 text:/
+x:214 y:354 width:25 height:26 class_idx:104 text:=
+x:191 y:350 width:22 height:34 class_idx:104 text:2
+x:168 y:354 width:25 height:27 class_idx:104 text:/
+x:116 y:350 width:23 height:34 class_idx:104 text:8
+x:775 y:340 width:23 height:36 class_idx:104 text:3
+x:753 y:348 width:24 height:22 class_idx:104 text:=
+x:324 y:716 width:21 height:32 class_idx:104 text:6
+x:575 y:298 width:25 height:33 class_idx:104 text:3
+x:109 y:301 width:36 height:37 class_idx:104 text:12
+x:575 y:253 width:25 height:36 class_idx:104 text:6
+x:108 y:258 width:38 height:36 class_idx:104 text:10
+x:295 y:133 width:25 height:36 class_idx:104 text:6
+x:271 y:143 width:25 height:17 class_idx:104 text:160
+x:245 y:134 width:28 height:34 class_idx:104 text:2
+x:78 y:1171 width:21 height:24 class_idx:104 text:/
+x:99 y:1166 width:21 height:33 class_idx:104 text:3
+x:570 y:434 width:37 height:36 class_idx:104 text:15
+x:472 y:715 width:32 height:33 class_idx:104 text:18
+x:263 y:719 width:35 height:30 class_idx:104 text:30
+x:116 y:720 width:22 height:30 class_idx:104 text:6
+x:51 y:723 width:37 height:32 class_idx:104 text:36
+x:743 y:711 width:22 height:33 class_idx:104 text:1
+x:687 y:713 width:21 height:33 class_idx:104 text:5
+x:530 y:714 width:22 height:31 class_idx:104 text:6
+x:298 y:626 width:22 height:32 class_idx:104 text:3
+x:88 y:626 width:23 height:30 class_idx:104 text:2
+x:715 y:621 width:23 height:34 class_idx:104 text:5
+x:502 y:624 width:21 height:30 class_idx:104 text:4
+x:678 y:578 width:37 height:33 class_idx:104 text:25
+x:463 y:579 width:39 height:32 class_idx:104 text:24
+x:324 y:583 width:21 height:27 class_idx:104 text:4
+x:261 y:580 width:35 height:33 class_idx:104 text:12
+x:61 y:581 width:23 height:30 class_idx:104 text:6
+x:116 y:439 width:25 height:36 class_idx:104 text:2
+x:18 y:505 width:794 height:305 class_idx:203
+x:0 y:818 width:844 height:411 class_idx:205
+x:30 y:236 width:285 height:244 class_idx:206
+x:455 y:256 width:323 height:215 class_idx:206
+x:221 y:538 width:163 height:140 class_idx:300
+x:29 y:541 width:142 height:104 class_idx:300

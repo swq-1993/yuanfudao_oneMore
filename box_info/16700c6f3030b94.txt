@@ -1,0 +1,40 @@
+x:502 y:730 width:49 height:51 class_idx:100 text:业
+x:169 y:680 width:66 height:70 class_idx:100 text:选
+x:101 y:673 width:58 height:67 class_idx:100 text:优
+x:30 y:668 width:83 height:71 class_idx:100 text:题
+x:232 y:684 width:76 height:77 class_idx:100 text:题
+x:303 y:694 width:74 height:77 class_idx:100 text:库
+x:450 y:724 width:49 height:59 class_idx:100 text:作
+x:551 y:735 width:46 height:46 class_idx:100 text:用
+x:594 y:738 width:49 height:51 class_idx:100 text:时
+x:646 y:763 width:15 height:25 class_idx:100 text:3
+x:807 y:753 width:48 height:47 class_idx:100 text:分
+x:549 y:105 width:50 height:40 class_idx:100 text:一
+x:851 y:764 width:25 height:36 class_idx:100 text:于
+x:860 y:754 width:45 height:45 class_idx:100 text:钟
+x:164 y:81 width:47 height:47 class_idx:100 text:题
+x:213 y:76 width:65 height:57 class_idx:100 text:二
+x:278 y:88 width:62 height:55 class_idx:100 text:口
+x:334 y:79 width:51 height:71 class_idx:100 text:四
+x:404 y:86 width:62 height:59 class_idx:100 text:三
+x:464 y:95 width:72 height:53 class_idx:100 text:题
+x:745 y:205 width:86 height:95 class_idx:101
+x:392 y:296 width:81 height:75 class_idx:101
+x:732 y:309 width:76 height:91 class_idx:101
+x:403 y:191 width:76 height:72 class_idx:101
+x:394 y:390 width:79 height:91 class_idx:101
+x:741 y:409 width:92 height:109 class_idx:101
+x:375 y:510 width:96 height:88 class_idx:101
+x:0 y:663 width:35 height:62 class_idx:101
+x:1 y:145 width:47 height:41 class_idx:102
+x:233 y:0 width:55 height:35 class_idx:104 text:53
+x:31 y:373 width:68 height:50 class_idx:104 text:83
+x:58 y:276 width:68 height:50 class_idx:104 text:90
+x:606 y:190 width:31 height:43 class_idx:104 text:8
+x:86 y:188 width:63 height:48 class_idx:104 text:72
+x:262 y:173 width:61 height:45 class_idx:104 text:11
+x:235 y:183 width:35 height:22 class_idx:104 text:-
+x:443 y:0 width:153 height:48 class_idx:104 text:(3$YOU$00)
+x:196 y:4 width:34 height:22 class_idx:104 text:=
+x:14 y:646 width:878 height:178 class_idx:200
+x:6 y:113 width:854 height:525 class_idx:207

@@ -1,0 +1,84 @@
+x:60 y:484 width:296 height:116 class_idx:300
+x:389 y:301 width:29 height:35 class_idx:100 text:位
+x:173 y:706 width:25 height:29 class_idx:100 text:程
+x:135 y:973 width:26 height:30 class_idx:100 text:填
+x:360 y:304 width:30 height:35 class_idx:100 text:两
+x:100 y:708 width:26 height:30 class_idx:100 text:计
+x:140 y:418 width:26 height:30 class_idx:100 text:式
+x:111 y:974 width:24 height:27 class_idx:100 text:里
+x:116 y:418 width:27 height:30 class_idx:100 text:算
+x:301 y:305 width:30 height:35 class_idx:100 text:数
+x:70 y:420 width:24 height:28 class_idx:100 text:图
+x:274 y:306 width:31 height:37 class_idx:100 text:位
+x:505 y:763 width:28 height:27 class_idx:104 text:85
+x:333 y:304 width:28 height:36 class_idx:100 text:减
+x:125 y:708 width:24 height:28 class_idx:100 text:算
+x:61 y:974 width:25 height:30 class_idx:100 text:在
+x:25 y:976 width:33 height:30 class_idx:102
+x:54 y:710 width:25 height:29 class_idx:100 text:写
+x:93 y:419 width:25 height:27 class_idx:100 text:列
+x:6 y:693 width:671 height:275 class_idx:203
+x:54 y:776 width:27 height:29 class_idx:104 text:73
+x:149 y:708 width:25 height:27 class_idx:100 text:过
+x:46 y:419 width:25 height:30 class_idx:100 text:看
+x:554 y:764 width:26 height:26 class_idx:104 text:44
+x:417 y:300 width:31 height:35 class_idx:100 text:数
+x:309 y:1083 width:25 height:25 class_idx:104 text:53
+x:291 y:768 width:28 height:27 class_idx:104 text:46
+x:149 y:769 width:31 height:35 class_idx:104 text:1
+x:339 y:766 width:26 height:28 class_idx:104 text:15
+x:520 y:625 width:32 height:34 class_idx:104 text:9
+x:103 y:1085 width:23 height:24 class_idx:104 text:75
+x:387 y:761 width:33 height:34 class_idx:104 text:10
+x:103 y:775 width:25 height:26 class_idx:104 text:31
+x:30 y:408 width:533 height:263 class_idx:202
+x:104 y:1116 width:22 height:24 class_idx:104 text:83
+x:524 y:1079 width:24 height:24 class_idx:104 text:57
+x:245 y:309 width:31 height:35 class_idx:100 text:两
+x:84 y:971 width:30 height:35 class_idx:104 text:=
+x:208 y:634 width:31 height:35 class_idx:104 text:0
+x:468 y:626 width:32 height:34 class_idx:104 text:0
+x:101 y:1055 width:24 height:24 class_idx:104 text:67
+x:159 y:970 width:25 height:34 class_idx:100 text:数
+x:78 y:709 width:25 height:29 class_idx:100 text:出
+x:15 y:709 width:39 height:32 class_idx:102
+x:310 y:1113 width:24 height:26 class_idx:104 text:34
+x:6 y:423 width:40 height:27 class_idx:102
+x:447 y:301 width:43 height:34 class_idx:102
+x:364 y:769 width:23 height:21 class_idx:104 text:=
+x:508 y:469 width:27 height:30 class_idx:100 text:个
+x:600 y:758 width:34 height:35 class_idx:104 text:0
+x:428 y:473 width:25 height:28 class_idx:102
+x:525 y:1110 width:23 height:24 class_idx:104 text:77
+x:153 y:1046 width:23 height:25 class_idx:104 text:63
+x:524 y:1049 width:23 height:25 class_idx:104 text:37
+x:309 y:1051 width:25 height:27 class_idx:104 text:42
+x:158 y:638 width:28 height:31 class_idx:104 text:=
+x:579 y:765 width:24 height:20 class_idx:104 text:=
+x:173 y:311 width:48 height:34 class_idx:100 text:4
+x:183 y:985 width:15 height:18 class_idx:100 text:9
+x:498 y:633 width:24 height:16 class_idx:104 text:=
+x:619 y:1038 width:35 height:37 class_idx:104 text:10
+x:185 y:641 width:23 height:22 class_idx:100 text:一
+x:364 y:1044 width:23 height:24 class_idx:104 text:14
+x:129 y:779 width:22 height:16 class_idx:104 text:=
+x:196 y:718 width:14 height:17 class_idx:100 text:O
+x:532 y:768 width:22 height:15 class_idx:104 text:-
+x:408 y:626 width:34 height:37 class_idx:104 text:17
+x:408 y:1106 width:32 height:37 class_idx:104 text:7
+x:165 y:429 width:14 height:17 class_idx:100 text:心
+x:580 y:1040 width:20 height:23 class_idx:104 text:14
+x:318 y:774 width:22 height:15 class_idx:104 text:-
+x:350 y:1048 width:15 height:18 class_idx:104 text:+
+x:565 y:1041 width:15 height:22 class_idx:104 text:-
+x:80 y:780 width:23 height:16 class_idx:104 text:-
+x:96 y:638 width:33 height:35 class_idx:100 text:口
+x:622 y:1073 width:30 height:30 class_idx:104 text:=
+x:403 y:1044 width:37 height:37 class_idx:104 text:1
+x:498 y:1014 width:157 height:116 class_idx:206
+x:194 y:1110 width:39 height:35 class_idx:104 text:=
+x:399 y:484 width:168 height:100 class_idx:300
+x:61 y:985 width:591 height:185 class_idx:203
+x:194 y:1045 width:37 height:40 class_idx:104 text:7
+x:65 y:978 width:171 height:200 class_idx:206
+x:407 y:1081 width:32 height:29 class_idx:100 text:口

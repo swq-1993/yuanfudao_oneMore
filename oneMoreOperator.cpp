@@ -1,9 +1,46 @@
 //
 // Created by sunwanqi on 2018/11/22.
 //
-
 #include "header.h"
 
+//用字符串展示一拖多的结果
+vector<string> OneMoreOperator::list_res(vector<vector<Bbox>>& clusters_col) {
+    string tmp = "";
+    vector<string> res;
+    int max_row = -1;
+    for (int i = 0; i < clusters_col.size(); i++){
+        max_row = max(max_row, (int)clusters_col[i].size());
+    }
+
+    for (int i = 0; i < max_row; i++){
+
+        for (int j = 0; j < clusters_col.size(); j++){
+            if (clusters_col[j].empty()){
+                continue;
+            }
+            if (clusters_col[j].size() == 1){
+                tmp += " ";
+                tmp += clusters_col[j][0].text;
+            }
+            else if (clusters_col[j].size() > i){
+                tmp += " ";
+                tmp += clusters_col[j][i].text;
+            }
+//            else if (clusters_col[j].size() <= i){
+//                tmp += " ";
+//                tmp += clusters_col[j].back().text;
+//            }
+        }
+//        删除第一个空格字符
+        if (tmp.length() > 1 && tmp[0] == ' '){
+            tmp.erase(0, 1);
+        }
+        res.push_back(tmp);
+        tmp = "";
+    }
+
+    return res;
+}
 
 //用IOU的思想对 列 进行聚类
 void OneMoreOperator::cluster_col(vector<Bbox>& bboxs, vector<vector<Bbox>>& clusters_col)
@@ -33,44 +70,20 @@ void OneMoreOperator::cluster_col(vector<Bbox>& bboxs, vector<vector<Bbox>>& clu
             cout << tmp_left << " " << tmp_right << endl;
             cout << (double)(Iou_max - Iou_min);
             cout << " " << (double)(0.5 * copy[j].height) << endl;*/
-            if (Iou_max >= Iou_min && copy[j].class_idx == 100){
+            if (Iou_max > Iou_min && copy[j].x <= tmp_left + (tmp_right - tmp_left) * 0.5){
+
 //                cout << "lianjie: " << copy[j].text << endl;
                 tmp.push_back(copy[j]);
                 tmp_left = min(tmp_left, copy[j].x);
                 tmp_right = max(tmp_right, copy[j].x + copy[j].width);
-
                 flag[j] = false;
             }
-            else if ((double)(Iou_max - Iou_min) >= (0 * copy[j].width) &&
-                     copy[j].x <= tmp_left + (tmp_right - tmp_left) * 0.9){
-
-//                cout << "lianjie2: " << copy[j].text << endl;
-                tmp.push_back(copy[j]);
-                tmp_left = min(tmp_left, copy[j].x);
-                tmp_right = max(tmp_right, copy[j].x + copy[j].width);
-
-                flag[j] = false;
-            }
-//            if ((double)(Iou_max - Iou_min) >= (double)(0.5 * copy[j].width) &&
-//                    copy[j].x <= tmp_left + (tmp_right - tmp_left) * 0.5)
-            /*if ((double)(Iou_max - Iou_min) >= (double)(0.5 * copy[j].width))
-                {
-                    if ((tmp_left <= copy[j].x && copy[j].x <= (tmp_left + tmp_right) * 0.5) ||
-                            (tmp_left > copy[j].x && copy[j].x + copy[j].width <= (tmp_left + tmp_right) * 0.5)){
-                        tmp.push_back(copy[j]);
-                        tmp_left = min(tmp_left, copy[j].x);
-                        tmp_right = max(tmp_right, copy[j].x + copy[j].width);
-
-                        copy.erase(copy.begin() + j);
-                        j = i;
-                    }
-                }*/
         }
         sort(tmp.begin(), tmp.end(), [](const Bbox &a, const Bbox &b){return a.y < b.y;});
         clusters_col.push_back(tmp);
         tmp.clear();
     }
-    sort(clusters_col.begin(), clusters_col.end(), comp_col);
+    sort(clusters_col.begin(), clusters_col.end(), [](const vector<Bbox> &a, const vector<Bbox> &b){ return a[0].x < b[0].x;});
 }
 
 //按照上和左的位置进行排序
@@ -92,11 +105,6 @@ bool OneMoreOperator::compare_col(const Bbox a, const Bbox b){
         return false;
 }
 
-//列结果的排序规则
-bool OneMoreOperator::comp_col(const vector<Bbox>& a, const vector<Bbox>& b){
-    return a[0].x < b[0].x;
-}
-
 //过滤掉大框外面的小框
 void OneMoreOperator::filter(vector<Bbox>& bboxs, Big_bbox big_bbox){
     vector<Bbox> tmp;
@@ -109,7 +117,7 @@ void OneMoreOperator::filter(vector<Bbox>& bboxs, Big_bbox big_bbox){
 
 //        if (Iou_max_row >= Iou_min_row && Iou_max_col >= Iou_min_col){
         //增加过滤条件
-        if ((Iou_max_row - Iou_min_row >= bboxs[i].width * 0.75) && (Iou_max_col - Iou_min_col >= bboxs[i].height * 0.75)){
+        if ((Iou_max_row - Iou_min_row >= bboxs[i].width * 0.25) && (Iou_max_col - Iou_min_col >= bboxs[i].height * 0.25)){
             tmp.push_back(bboxs[i]);
         }
     }
@@ -125,7 +133,7 @@ void OneMoreOperator::analysis(vector<string>& file_content, vector<Bbox>& bboxs
         vector<string> splitedLine = split_line(file_content[i], ' ');
         if (splitedLine.size() >= 5){
             string class_id = split_line(splitedLine[4], ':')[1];
-            if (class_id == "203" || class_id == "200" || class_id == "201" || class_id == "202") {
+            if (class_id == "203" || class_id == "206") {
                 big_bbox.x = stoi(split_line(splitedLine[0], ':')[1]);
                 big_bbox.y = stoi(split_line(splitedLine[1], ':')[1]);
                 big_bbox.width = stoi(split_line(splitedLine[2], ':')[1]);
@@ -133,7 +141,7 @@ void OneMoreOperator::analysis(vector<string>& file_content, vector<Bbox>& bboxs
                 big_bbox.class_idx = stoi(split_line(splitedLine[4], ':')[1]);
                 big_bboxs.push_back(big_bbox);
             }
-            else if(class_id == "100" || class_id == "101" || class_id == "103" || class_id == "104"){
+            else if(class_id == "101" || class_id == "103" || class_id == "104"){
                 bbox.x = stoi(split_line(splitedLine[0], ':')[1]);
                 bbox.y = stoi(split_line(splitedLine[1], ':')[1]);
                 bbox.width = stoi(split_line(splitedLine[2], ':')[1]);

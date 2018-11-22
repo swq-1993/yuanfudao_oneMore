@@ -44,6 +44,9 @@ public:
     vector<Big_bbox> big_bboxs;
     vector<vector<Bbox>> clusters_col;
 
+    //用字符串展示一拖多的结果
+    vector<string> list_res(vector<vector<Bbox>>& clusters_col);
+
     //用IOU的思想对 列 进行聚类
     void cluster_col(vector<Bbox>& bboxs, vector<vector<Bbox>>& clusters_col);
 
@@ -51,8 +54,6 @@ public:
     static bool compare(const Bbox a, const Bbox b);
     static bool compare_col(const Bbox a, const Bbox b);
 
-    //列结果的排序规则
-    static bool comp_col(const vector<Bbox>& a, const vector<Bbox>& b);
 
     //过滤掉大框外面的小框
     void filter(vector<Bbox>& bboxs, Big_bbox big_bbox);

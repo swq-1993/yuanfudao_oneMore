@@ -1,0 +1,15 @@
+x:617 y:164 width:61 height:85 class_idx:101
+x:545 y:488 width:62 height:93 class_idx:101
+x:635 y:810 width:75 height:95 class_idx:101
+x:523 y:821 width:85 height:85 class_idx:101
+x:718 y:1115 width:69 height:101 class_idx:101
+x:622 y:1118 width:62 height:115 class_idx:101
+x:522 y:1136 width:65 height:100 class_idx:101
+x:599 y:1003 width:35 height:46 class_idx:102
+x:620 y:351 width:47 height:45 class_idx:104 text:+
+x:435 y:480 width:63 height:89 class_idx:104 text:60
+x:655 y:498 width:62 height:91 class_idx:104 text:9
+x:740 y:504 width:78 height:85 class_idx:104 text:$FRACS$1$YOU$1/4$FRACE$
+x:740 y:814 width:62 height:86 class_idx:104 text:$FRACS$3$YOU$1/5$FRACE$
+x:415 y:829 width:82 height:71 class_idx:104 text:$FRACS$2$YOU$3/5$FRACE$
+x:351 y:155 width:502 height:1046 class_idx:206

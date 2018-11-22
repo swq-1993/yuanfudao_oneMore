@@ -1,0 +1,30 @@
+x:33 y:516 width:43 height:32 class_idx:100 text:心
+x:196 y:814 width:53 height:100 class_idx:100 text:图
+x:33 y:618 width:48 height:37 class_idx:100 text:西
+x:29 y:556 width:55 height:52 class_idx:100 text:言
+x:30 y:456 width:50 height:44 class_idx:100 text:解
+x:26 y:394 width:59 height:60 class_idx:100 text:降
+x:31 y:341 width:52 height:47 class_idx:100 text:冲
+x:25 y:279 width:65 height:56 class_idx:100 text:命
+x:30 y:223 width:50 height:51 class_idx:100 text:济
+x:24 y:163 width:64 height:61 class_idx:100 text:条
+x:30 y:109 width:54 height:45 class_idx:100 text:西
+x:184 y:1100 width:50 height:86 class_idx:101
+x:254 y:1096 width:49 height:73 class_idx:101
+x:334 y:1083 width:41 height:65 class_idx:101
+x:209 y:169 width:54 height:135 class_idx:101
+x:280 y:513 width:53 height:83 class_idx:101
+x:343 y:513 width:52 height:91 class_idx:101
+x:407 y:78 width:47 height:55 class_idx:102
+x:31 y:25 width:52 height:64 class_idx:102
+x:288 y:216 width:54 height:82 class_idx:104 text:/
+x:372 y:999 width:37 height:27 class_idx:104 text:(0)
+x:377 y:970 width:32 height:30 class_idx:104 text:*
+x:199 y:879 width:40 height:30 class_idx:104 text:60
+x:338 y:863 width:45 height:43 class_idx:104 text:$FRACS$1$YOU$1/4$FRACE$
+x:266 y:854 width:49 height:46 class_idx:104 text:$FRACS$2$YOU$1/4$FRACE$
+x:208 y:509 width:46 height:90 class_idx:104 text:$FRACS$5/6$FRACE$
+x:400 y:411 width:44 height:34 class_idx:104 text:<
+x:409 y:383 width:34 height:32 class_idx:104 text:*
+x:367 y:233 width:47 height:67 class_idx:104 text:$FRACS$10/21$FRACE$
+x:163 y:100 width:327 height:1140 class_idx:206

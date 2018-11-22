@@ -1,0 +1,44 @@
+x:228 y:788 width:18 height:20 class_idx:100 text:O
+x:190 y:768 width:40 height:40 class_idx:100 text:赛
+x:156 y:769 width:37 height:40 class_idx:100 text:力
+x:115 y:768 width:43 height:42 class_idx:100 text:接
+x:435 y:474 width:46 height:37 class_idx:101
+x:350 y:964 width:51 height:44 class_idx:101
+x:529 y:954 width:42 height:44 class_idx:101
+x:686 y:938 width:57 height:46 class_idx:101
+x:434 y:659 width:57 height:46 class_idx:101
+x:428 y:594 width:61 height:49 class_idx:101
+x:433 y:536 width:47 height:38 class_idx:101
+x:419 y:361 width:59 height:54 class_idx:101
+x:416 y:301 width:60 height:52 class_idx:101
+x:419 y:178 width:55 height:46 class_idx:101
+x:424 y:240 width:50 height:41 class_idx:101
+x:63 y:445 width:37 height:38 class_idx:102
+x:63 y:124 width:36 height:36 class_idx:102
+x:65 y:774 width:38 height:37 class_idx:102
+x:346 y:280 width:29 height:26 class_idx:104 text:=
+x:138 y:986 width:46 height:42 class_idx:104 text:35
+x:250 y:875 width:36 height:35 class_idx:104 text:12
+x:224 y:883 width:27 height:27 class_idx:104 text:+
+x:595 y:869 width:20 height:25 class_idx:104 text:+
+x:443 y:865 width:38 height:36 class_idx:104 text:28
+x:613 y:861 width:36 height:34 class_idx:104 text:33
+x:260 y:166 width:41 height:38 class_idx:104 text:13
+x:259 y:234 width:45 height:37 class_idx:104 text:25
+x:209 y:669 width:42 height:36 class_idx:104 text:62
+x:206 y:604 width:45 height:37 class_idx:104 text:56
+x:141 y:268 width:43 height:33 class_idx:104 text:34
+x:189 y:273 width:25 height:32 class_idx:104 text:+
+x:205 y:540 width:44 height:38 class_idx:104 text:24
+x:205 y:474 width:44 height:40 class_idx:104 text:38
+x:331 y:468 width:40 height:35 class_idx:104 text:16
+x:298 y:473 width:28 height:28 class_idx:104 text:+
+x:260 y:376 width:49 height:34 class_idx:104 text:44
+x:260 y:304 width:45 height:39 class_idx:104 text:32
+x:44 y:759 width:731 height:287 class_idx:206
+x:154 y:155 width:334 height:276 class_idx:206
+x:86 y:421 width:425 height:323 class_idx:206
+x:654 y:836 width:99 height:97 class_idx:300
+x:491 y:844 width:85 height:104 class_idx:300
+x:321 y:834 width:92 height:136 class_idx:300
+x:80 y:858 width:130 height:118 class_idx:300
