@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named yuanfudao_oneMore
+# Target rules for targets named oneMore
 
 # Build rule for target.
-yuanfudao_oneMore: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 yuanfudao_oneMore
-.PHONY : yuanfudao_oneMore
+oneMore: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 oneMore
+.PHONY : oneMore
 
 # fast build rule for target.
-yuanfudao_oneMore/fast:
-	$(MAKE) -f CMakeFiles/yuanfudao_oneMore.dir/build.make CMakeFiles/yuanfudao_oneMore.dir/build
-.PHONY : yuanfudao_oneMore/fast
+oneMore/fast:
+	$(MAKE) -f CMakeFiles/oneMore.dir/build.make CMakeFiles/oneMore.dir/build
+.PHONY : oneMore/fast
 
 main.o: main.cpp.o
 
@@ -129,7 +129,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/yuanfudao_oneMore.dir/build.make CMakeFiles/yuanfudao_oneMore.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/oneMore.dir/build.make CMakeFiles/oneMore.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -138,7 +138,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/yuanfudao_oneMore.dir/build.make CMakeFiles/yuanfudao_oneMore.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/oneMore.dir/build.make CMakeFiles/oneMore.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -147,8 +147,35 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/yuanfudao_oneMore.dir/build.make CMakeFiles/yuanfudao_oneMore.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/oneMore.dir/build.make CMakeFiles/oneMore.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+oneMoreOperator.o: oneMoreOperator.cpp.o
+
+.PHONY : oneMoreOperator.o
+
+# target to build an object file
+oneMoreOperator.cpp.o:
+	$(MAKE) -f CMakeFiles/oneMore.dir/build.make CMakeFiles/oneMore.dir/oneMoreOperator.cpp.o
+.PHONY : oneMoreOperator.cpp.o
+
+oneMoreOperator.i: oneMoreOperator.cpp.i
+
+.PHONY : oneMoreOperator.i
+
+# target to preprocess a source file
+oneMoreOperator.cpp.i:
+	$(MAKE) -f CMakeFiles/oneMore.dir/build.make CMakeFiles/oneMore.dir/oneMoreOperator.cpp.i
+.PHONY : oneMoreOperator.cpp.i
+
+oneMoreOperator.s: oneMoreOperator.cpp.s
+
+.PHONY : oneMoreOperator.s
+
+# target to generate assembly for a file
+oneMoreOperator.cpp.s:
+	$(MAKE) -f CMakeFiles/oneMore.dir/build.make CMakeFiles/oneMore.dir/oneMoreOperator.cpp.s
+.PHONY : oneMoreOperator.cpp.s
 
 # Help Target
 help:
@@ -158,10 +185,13 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... yuanfudao_oneMore"
+	@echo "... oneMore"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... oneMoreOperator.o"
+	@echo "... oneMoreOperator.i"
+	@echo "... oneMoreOperator.s"
 .PHONY : help
 
 

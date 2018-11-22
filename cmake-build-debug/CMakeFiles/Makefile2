@@ -60,39 +60,39 @@ CMAKE_SOURCE_DIR = /Users/sunwanqi/Documents/yuanfudao_oneMore
 CMAKE_BINARY_DIR = /Users/sunwanqi/Documents/yuanfudao_oneMore/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/yuanfudao_oneMore.dir
+# Target rules for target CMakeFiles/oneMore.dir
 
 # All Build rule for target.
-CMakeFiles/yuanfudao_oneMore.dir/all:
-	$(MAKE) -f CMakeFiles/yuanfudao_oneMore.dir/build.make CMakeFiles/yuanfudao_oneMore.dir/depend
-	$(MAKE) -f CMakeFiles/yuanfudao_oneMore.dir/build.make CMakeFiles/yuanfudao_oneMore.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/sunwanqi/Documents/yuanfudao_oneMore/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target yuanfudao_oneMore"
-.PHONY : CMakeFiles/yuanfudao_oneMore.dir/all
+CMakeFiles/oneMore.dir/all:
+	$(MAKE) -f CMakeFiles/oneMore.dir/build.make CMakeFiles/oneMore.dir/depend
+	$(MAKE) -f CMakeFiles/oneMore.dir/build.make CMakeFiles/oneMore.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/sunwanqi/Documents/yuanfudao_oneMore/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target oneMore"
+.PHONY : CMakeFiles/oneMore.dir/all
 
 # Include target in all.
-all: CMakeFiles/yuanfudao_oneMore.dir/all
+all: CMakeFiles/oneMore.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/yuanfudao_oneMore.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sunwanqi/Documents/yuanfudao_oneMore/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/yuanfudao_oneMore.dir/all
+CMakeFiles/oneMore.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sunwanqi/Documents/yuanfudao_oneMore/cmake-build-debug/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/oneMore.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sunwanqi/Documents/yuanfudao_oneMore/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/yuanfudao_oneMore.dir/rule
+.PHONY : CMakeFiles/oneMore.dir/rule
 
 # Convenience name for target.
-yuanfudao_oneMore: CMakeFiles/yuanfudao_oneMore.dir/rule
+oneMore: CMakeFiles/oneMore.dir/rule
 
-.PHONY : yuanfudao_oneMore
-
-# clean rule for target.
-CMakeFiles/yuanfudao_oneMore.dir/clean:
-	$(MAKE) -f CMakeFiles/yuanfudao_oneMore.dir/build.make CMakeFiles/yuanfudao_oneMore.dir/clean
-.PHONY : CMakeFiles/yuanfudao_oneMore.dir/clean
+.PHONY : oneMore
 
 # clean rule for target.
-clean: CMakeFiles/yuanfudao_oneMore.dir/clean
+CMakeFiles/oneMore.dir/clean:
+	$(MAKE) -f CMakeFiles/oneMore.dir/build.make CMakeFiles/oneMore.dir/clean
+.PHONY : CMakeFiles/oneMore.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/oneMore.dir/clean
 
 .PHONY : clean
 
