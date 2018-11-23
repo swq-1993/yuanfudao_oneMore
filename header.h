@@ -43,6 +43,7 @@ public:
     vector<Bbox> bboxs;
     vector<Big_bbox> big_bboxs;
     vector<vector<Bbox>> clusters_col;
+    vector<vector<vector<Bbox>>> clusters_col_row;
 
     vector<char> illegal_char{'(', ')', ',', ';', ':', '?', '!'};
 
@@ -53,8 +54,17 @@ public:
     //过滤筛选之后中含有非法字符的Bbox
     void filter_illegal(vector<Bbox>& bboxs);
 
+    //连接紧挨着的Bbox
+    void splice_adjacent_box(vector<Bbox>& bboxs);
+
+    //将列聚类的结果再行聚类一次，用字符串展示一拖多的结果
+    vector<string> list_final_res(vector<vector<vector<Bbox>>>& clusters_col_row);
+
     //用字符串展示一拖多的结果
     vector<string> list_res(vector<vector<Bbox>>& clusters_col);
+
+    //对列里面的Bbox再一次行聚类，合并列中同一行的Bbox
+    void cluster_col_row(vector<vector<Bbox>>& clusters_col, vector<vector<vector<Bbox>>>& clusters_col_row);
 
     //用IOU的思想对 列 进行聚类
     void cluster_col(vector<Bbox>& bboxs, vector<vector<Bbox>>& clusters_col);

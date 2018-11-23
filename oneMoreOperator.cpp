@@ -3,6 +3,93 @@
 //
 #include "header.h"
 
+//连接紧挨着的Bbox
+void OneMoreOperator::splice_adjacent_box(vector<Bbox>& bboxs){
+
+    vector<Bbox> tmp;
+    vector<bool> flag(bboxs.size(), true);
+
+    for (int i = 0; i < bboxs.size(); i++){
+        if (!flag[i]){
+            continue;
+        }
+        flag[i] = false;
+
+        for (int j = 0; j < bboxs.size(); j++)
+        {
+            if (!flag[j]){
+                continue;
+            }
+
+            int Iou_min_row = max(bboxs[i].x, bboxs[j].x);
+            int Iou_max_row = min(bboxs[i].x + bboxs[i].width, bboxs[j].x + bboxs[i].width);
+
+            int Iou_min_col = max(bboxs[i].y, bboxs[j].y);
+            int Iou_max_col = min(bboxs[i].y + bboxs[i].height, bboxs[j].y + bboxs[j].height);
+
+            if (((double)(Iou_max_col - Iou_min_col) > 0.85 * bboxs[i].height || (double)(Iou_max_col - Iou_min_col) > 0.85 * bboxs[j].height)
+                    && Iou_max_row > Iou_min_row){
+                bboxs[i].x = Iou_min_row;
+                bboxs[i].y = Iou_min_col;
+                bboxs[i].width = max(bboxs[i].x + bboxs[i].width, bboxs[j].x + bboxs[j].width) - min(bboxs[i].x, bboxs[j].x);
+                bboxs[i].height = max(bboxs[i].y + bboxs[i].height, bboxs[j].y + bboxs[j].height) - min(bboxs[i].y, bboxs[j].y);
+                if (bboxs[i].x < bboxs[j].x){
+                    bboxs[i].text = bboxs[i].text + bboxs[j].text;
+                }
+                else{
+                    bboxs[i].text = bboxs[j].text + bboxs[i].text;
+                }
+
+                flag[j] = false;
+            }
+        }
+        tmp.push_back(bboxs[i]);
+    }
+
+    bboxs.clear();
+    bboxs = tmp;
+}
+
+//将列聚类的结果再行聚类一次，用字符串展示一拖多的结果
+vector<string> OneMoreOperator::list_final_res(vector<vector<vector<Bbox>>>& clusters_col_row){
+    string tmp = "";
+    vector<string> res;
+    int max_row = -1;
+    for (int i = 0; i < clusters_col_row.size(); i++){
+        max_row = max(max_row, (int)clusters_col_row[i].size());
+    }
+
+    for (int i = 0; i < max_row; i++){
+
+        for (int j = 0; j < clusters_col_row.size(); j++){
+            if (clusters_col_row[j].empty()){
+                continue;
+            }
+            if (clusters_col_row[j].size() == 1){
+                tmp += " ";
+                for (int index = 0; index < clusters_col_row[j][0].size(); index++){
+                    tmp += clusters_col_row[j][0][index].text;
+                }
+            }
+
+            else if (clusters_col_row[j].size() > i){
+                tmp += " ";
+                for (int index = 0; index < clusters_col_row[j][i].size(); index++){
+                    tmp += clusters_col_row[j][i][index].text;
+                }
+            }
+        }
+
+        if (tmp.length() > 1 && tmp[0] == ' '){
+            tmp.erase(0, 1);
+        }
+        res.push_back(tmp);
+        tmp = "";
+    }
+
+    return res;
+}
+
 //用字符串展示一拖多的结果
 vector<string> OneMoreOperator::list_res(vector<vector<Bbox>>& clusters_col) {
     string tmp = "";
@@ -42,6 +129,56 @@ vector<string> OneMoreOperator::list_res(vector<vector<Bbox>>& clusters_col) {
     return res;
 }
 
+//对列里面的Bbox再一次行聚类，合并列中同一行的Bbox
+void OneMoreOperator::cluster_col_row(vector<vector<Bbox>>& clusters_col, vector<vector<vector<Bbox>>>& clusters_col_row){
+    vector<vector<Bbox>> tmp_col;
+
+    for (int i = 0; i < clusters_col.size(); i++){
+        vector<Bbox> copy = clusters_col[i];
+        sort(copy.begin(), copy.end(), compare);
+        vector<bool> flag(copy.size(), true);
+        vector<Bbox> tmp;
+        for (int j = 0; j < copy.size(); j++){
+            if (!flag[j]){
+                continue;
+            }
+            int tmp_top = copy[j].y;
+            int tmp_bottom = copy[j].y + copy[j].height;
+            tmp.push_back(copy[j]);
+            flag[j] = false;
+            for (int m = 0; m < copy.size(); m++){
+                if (!flag[m]){
+                    continue;
+                }
+
+                int Iou_min = max(tmp_top, copy[m].y);
+                int Iou_max = min(tmp_bottom, copy[m].y + copy[m].height);
+
+                /*cout << "compare: " << copy[j].y << " " << copy[j].text << " " << copy[m].y << " " << copy[m].text << endl;
+                cout << tmp_top << " " << tmp_bottom << endl;
+                cout << (double)(Iou_max - Iou_min);
+                cout << " " << (double)(0.5 * copy[m].height) << endl;*/
+
+                if ((double)(Iou_max - Iou_min) >= (double)(0.25 * copy[m].height) &&
+                        copy[m].y < tmp_top + (tmp_bottom - tmp_top) * 0.5){
+                    tmp.push_back(copy[m]);
+                    tmp_top = min(tmp_top, copy[m].y);
+                    tmp_bottom = max(tmp_bottom, copy[m].y + copy[m].height);
+                    flag[m] = false;
+                }
+
+            }
+
+            sort(tmp.begin(), tmp.end(), [](const Bbox &a, const Bbox &b){return a.x < b.x;});
+            tmp_col.push_back(tmp);
+            tmp.clear();
+        }
+
+        clusters_col_row.push_back(tmp_col);
+        tmp_col.clear();
+    }
+}
+
 //用IOU的思想对 列 进行聚类
 void OneMoreOperator::cluster_col(vector<Bbox>& bboxs, vector<vector<Bbox>>& clusters_col)
 {
@@ -69,8 +206,8 @@ void OneMoreOperator::cluster_col(vector<Bbox>& bboxs, vector<vector<Bbox>>& clu
             /*cout << "compare: " << copy[i].x << " " << copy[i].text << " " << copy[j].x << " " << copy[j].text << endl;
             cout << tmp_left << " " << tmp_right << endl;
             cout << (double)(Iou_max - Iou_min);
-            cout << " " << (double)(0.5 * copy[j].height) << endl;*/
-            if (((double)(Iou_max - Iou_min) > (0.5 * copy[j].width) && copy[j].x <= tmp_left + (tmp_right - tmp_left) * 0.5)
+            cout << " " << (double)(0.5 * copy[j].width) << endl;*/
+            if (((double)(Iou_max - Iou_min) > (0.5 * copy[j].width) && copy[j].x <= tmp_left + (tmp_right - tmp_left) * 0.75)
                     || (copy[j].x > tmp_left && copy[j].x + copy[j].width < tmp_right)){
 
 //                cout << "lianjie: " << copy[j].text << endl;
@@ -147,8 +284,14 @@ void OneMoreOperator::filter(vector<Bbox>& bboxs, Big_bbox big_bbox){
         int Iou_max_col = min(bboxs[i].y + bboxs[i].height, big_bbox.y + big_bbox.height);
 
 //        if (Iou_max_row >= Iou_min_row && Iou_max_col >= Iou_min_col){
-        //增加过滤条件
-        if ((Iou_max_row - Iou_min_row >= bboxs[i].width * 0.75) && (Iou_max_col - Iou_min_col >= bboxs[i].height * 0.5)){
+//        增加过滤条件
+        if ((Iou_max_row - Iou_min_row == bboxs[i].width) && (Iou_max_col - Iou_min_col >= bboxs[i].height * 0.2)){
+            tmp.push_back(bboxs[i]);
+        }
+        else if ((Iou_max_col - Iou_min_col == bboxs[i].height) && (Iou_max_row - Iou_min_row >= bboxs[i].width * 0.2)){
+            tmp.push_back(bboxs[i]);
+        }
+        else if ((Iou_max_row - Iou_min_row >= bboxs[i].width * 0.45) && (Iou_max_col - Iou_min_col >= bboxs[i].height * 0.45)){
             tmp.push_back(bboxs[i]);
         }
     }
