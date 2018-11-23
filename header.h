@@ -44,6 +44,15 @@ public:
     vector<Big_bbox> big_bboxs;
     vector<vector<Bbox>> clusters_col;
 
+    vector<char> illegal_char{'(', ')', ',', ';', ':', '?', '!'};
+
+    bool part_match(string a, char c);
+    //Bbox里面是否含有一拖多非法字符
+    bool has_illegal_char(Bbox bbox);
+
+    //过滤筛选之后中含有非法字符的Bbox
+    void filter_illegal(vector<Bbox>& bboxs);
+
     //用字符串展示一拖多的结果
     vector<string> list_res(vector<vector<Bbox>>& clusters_col);
 

@@ -3,7 +3,7 @@
 
 int main() {
 
-    string box_name = "163bb4b0d2f41a0.txt";
+    string box_name = "163e3d51a7cc510.txt";
     OneMoreOperator oneMoreOperator;
     string file_path = "../box_info/" + box_name;
     cout << file_path << endl;
@@ -21,6 +21,9 @@ int main() {
         cout << "没有符合要求的Bbox；" << endl;
         exit(1);
     }
+
+    oneMoreOperator.filter_illegal(oneMoreOperator.bboxs);
+    cout << "after illegal filter: " << oneMoreOperator.bboxs.size() << endl;
     for (int i = 0; i < oneMoreOperator.bboxs.size(); ++i) {
         cout << oneMoreOperator.bboxs[i].text << " ";
     }

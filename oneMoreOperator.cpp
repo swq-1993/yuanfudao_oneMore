@@ -70,7 +70,8 @@ void OneMoreOperator::cluster_col(vector<Bbox>& bboxs, vector<vector<Bbox>>& clu
             cout << tmp_left << " " << tmp_right << endl;
             cout << (double)(Iou_max - Iou_min);
             cout << " " << (double)(0.5 * copy[j].height) << endl;*/
-            if (Iou_max > Iou_min && copy[j].x <= tmp_left + (tmp_right - tmp_left) * 0.5){
+            if (((double)(Iou_max - Iou_min) > (0.5 * copy[j].width) && copy[j].x <= tmp_left + (tmp_right - tmp_left) * 0.5)
+                    || (copy[j].x > tmp_left && copy[j].x + copy[j].width < tmp_right)){
 
 //                cout << "lianjie: " << copy[j].text << endl;
                 tmp.push_back(copy[j]);
@@ -105,6 +106,36 @@ bool OneMoreOperator::compare_col(const Bbox a, const Bbox b){
         return false;
 }
 
+bool OneMoreOperator::part_match(string a, char c){
+    for (char single : a){
+        if (single == c){
+            return true;
+        }
+    }
+    return false;
+}
+
+bool OneMoreOperator::has_illegal_char(Bbox bbox){
+    for (int i = 0; i < illegal_char.size(); i++){
+        if (part_match(bbox.text, illegal_char[i])){
+            return true;
+        }
+    }
+    return false;
+}
+
+//过滤筛选之后中含有非法字符的Bbox
+void OneMoreOperator::filter_illegal(vector<Bbox>& bboxs){
+    vector<Bbox> tmp;
+    for (int i = 0; i < bboxs.size(); i++){
+        if (!has_illegal_char(bboxs[i])){
+            tmp.push_back(bboxs[i]);
+        }
+    }
+    bboxs.clear();
+    bboxs = tmp;
+}
+
 //过滤掉大框外面的小框
 void OneMoreOperator::filter(vector<Bbox>& bboxs, Big_bbox big_bbox){
     vector<Bbox> tmp;
@@ -117,7 +148,7 @@ void OneMoreOperator::filter(vector<Bbox>& bboxs, Big_bbox big_bbox){
 
 //        if (Iou_max_row >= Iou_min_row && Iou_max_col >= Iou_min_col){
         //增加过滤条件
-        if ((Iou_max_row - Iou_min_row >= bboxs[i].width * 0.25) && (Iou_max_col - Iou_min_col >= bboxs[i].height * 0.25)){
+        if ((Iou_max_row - Iou_min_row >= bboxs[i].width * 0.75) && (Iou_max_col - Iou_min_col >= bboxs[i].height * 0.5)){
             tmp.push_back(bboxs[i]);
         }
     }
@@ -141,7 +172,7 @@ void OneMoreOperator::analysis(vector<string>& file_content, vector<Bbox>& bboxs
                 big_bbox.class_idx = stoi(split_line(splitedLine[4], ':')[1]);
                 big_bboxs.push_back(big_bbox);
             }
-            else if(class_id == "101" || class_id == "103" || class_id == "104"){
+            else if(class_id == "101" || class_id == "104"){
                 bbox.x = stoi(split_line(splitedLine[0], ':')[1]);
                 bbox.y = stoi(split_line(splitedLine[1], ':')[1]);
                 bbox.width = stoi(split_line(splitedLine[2], ':')[1]);
