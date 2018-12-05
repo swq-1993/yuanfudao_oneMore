@@ -8,54 +8,56 @@ int main() {
     string box_name = "16700f77e68578e.txt";
     OneMoreOperator oneMoreOperator;
     string file_path = "../box_info/" + box_name;
-    cout << "file path: " << file_path << endl;
+    std::cout << "file path: " << file_path << std::endl;
     oneMoreOperator.ReadDataFromTxt(file_path);
 
     if (oneMoreOperator.file_content.empty()){
         exit(1);
     }
     oneMoreOperator.analysis(oneMoreOperator.file_content, oneMoreOperator.bboxs, oneMoreOperator.big_bboxs);
-    cout << "bboxs size: " << oneMoreOperator.bboxs.size() << "个bounding box" << endl;
+    std::cout << "bboxs size: " << oneMoreOperator.bboxs.size() << "个bounding box" << std::endl;
     if (oneMoreOperator.big_bboxs.empty()){
-        cout << "没有符合的大框；" << endl;
+        std::cout << "没有符合的大框；" << std::endl;
         exit(1);
     }
     oneMoreOperator.filter(oneMoreOperator.bboxs, oneMoreOperator.big_bboxs[1]);
-    cout << "after filter: " << oneMoreOperator.bboxs.size() << endl;
+    std::cout << "after filter: " << oneMoreOperator.bboxs.size() << std::endl;
     if (oneMoreOperator.bboxs.empty()){
-        cout << "没有符合要求的Bbox；" << endl;
+        std::cout << "没有符合要求的Bbox；" << std::endl;
         exit(1);
     }
 
-    oneMoreOperator.filter_illegal(oneMoreOperator.bboxs);
-    cout << "after illegal filter: " << oneMoreOperator.bboxs.size() << endl;
+    /*oneMoreOperator.filter_illegal(oneMoreOperator.bboxs);
+    std::cout << "after illegal filter: " << oneMoreOperator.bboxs.size() << std::endl;
     for (int i = 0; i < oneMoreOperator.bboxs.size(); ++i) {
-        cout << oneMoreOperator.bboxs[i].text << " ";
+        std::cout << oneMoreOperator.bboxs[i].text << " ";
     }
-    cout << endl;
+    std::cout << std::endl;
 
     oneMoreOperator.splice_adjacent_box(oneMoreOperator.bboxs);
-    cout << oneMoreOperator.bboxs.size() << endl;
+    std::cout << oneMoreOperator.bboxs.size() << std::endl;
 
     oneMoreOperator.cluster_col(oneMoreOperator.bboxs, oneMoreOperator.clusters_col);
-    cout << endl << "列内容：" << endl;
+    std::cout << std::endl << "列内容：" << std::endl;
     for (int i = 0; i < oneMoreOperator.clusters_col.size(); i++){
-        cout << "第" << i + 1 << "列:" << endl;
+        std::cout << "第" << i + 1 << "列:" << std::endl;
         for (int j = 0; j < oneMoreOperator.clusters_col[i].size(); j++){
-            cout << oneMoreOperator.clusters_col[i][j].text << " ";
+            std::cout << oneMoreOperator.clusters_col[i][j].text << " ";
         }
-        cout << endl;
+        std::cout << std::endl;
     }
-    cout << endl;
+    std::cout << std::endl;
 
     oneMoreOperator.cluster_col_row(oneMoreOperator.clusters_col, oneMoreOperator.clusters_col_row);
 
     vector<string> res = oneMoreOperator.list_res(oneMoreOperator.clusters_col);
 //    vector<string> res = oneMoreOperator.list_final_res(oneMoreOperator.clusters_col_row);
-    cout << "运算：" << endl;
+    std::cout << "运算：" << std::endl;
     for (int i = 0; i < res.size(); i++){
-        cout << res[i] << endl;
-    }
+        std::cout << res[i] << std::endl;
+    }*/
+
+    oneMoreOperator.run_result();
 
     return 0;
 }

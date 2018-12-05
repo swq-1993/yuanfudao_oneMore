@@ -11,10 +11,10 @@
 #include <fstream>
 #include <algorithm>
 #include <math.h>
-#include <cmath>
-#include <unordered_map>
 #include <map>
-using namespace std;
+
+using std::vector;
+using std::string;
 
 // 单个检测框
 struct Bbox{
@@ -47,7 +47,11 @@ public:
 
     vector<char> illegal_char{'(', ')', ',', ';', ':', '?', '!'};
 
+    //集成所需解析box的所有步骤
+    void run_result();
+
     bool part_match(string a, char c);
+
     //Bbox里面是否含有一拖多非法字符
     bool has_illegal_char(Bbox bbox);
 
@@ -70,8 +74,8 @@ public:
     void cluster_col(vector<Bbox>& bboxs, vector<vector<Bbox>>& clusters_col);
 
     //按照上和左的位置进行排序
-    static bool compare(const Bbox a, const Bbox b);
-    static bool compare_col(const Bbox a, const Bbox b);
+    static bool compare(const Bbox &a, const Bbox &b);
+    static bool compare_col(const Bbox &a, const Bbox &b);
 
 
     //过滤掉大框外面的小框

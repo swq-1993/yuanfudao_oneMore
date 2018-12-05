@@ -3,6 +3,20 @@
 //
 #include "header.h"
 
+//集成所需解析box的所有步骤
+void OneMoreOperator::run_result() {
+    filter_illegal(bboxs);
+    splice_adjacent_box(bboxs);
+    cluster_col(bboxs, clusters_col);
+    cluster_col_row(clusters_col, clusters_col_row);
+    vector<string> res = list_res(clusters_col);
+    std::cout << "运算：" << std::endl;
+    for (int i = 0; i < res.size(); i++){
+        std::cout << res[i] << std::endl;
+    }
+}
+
+
 //连接紧挨着的Bbox
 void OneMoreOperator::splice_adjacent_box(vector<Bbox>& bboxs){
 
@@ -21,18 +35,18 @@ void OneMoreOperator::splice_adjacent_box(vector<Bbox>& bboxs){
                 continue;
             }
 
-            int Iou_min_row = max(bboxs[i].x, bboxs[j].x);
-            int Iou_max_row = min(bboxs[i].x + bboxs[i].width, bboxs[j].x + bboxs[i].width);
+            int Iou_min_row = std::max(bboxs[i].x, bboxs[j].x);
+            int Iou_max_row = std::min(bboxs[i].x + bboxs[i].width, bboxs[j].x + bboxs[i].width);
 
-            int Iou_min_col = max(bboxs[i].y, bboxs[j].y);
-            int Iou_max_col = min(bboxs[i].y + bboxs[i].height, bboxs[j].y + bboxs[j].height);
+            int Iou_min_col = std::max(bboxs[i].y, bboxs[j].y);
+            int Iou_max_col = std::min(bboxs[i].y + bboxs[i].height, bboxs[j].y + bboxs[j].height);
 
             if (((double)(Iou_max_col - Iou_min_col) > 0.85 * bboxs[i].height || (double)(Iou_max_col - Iou_min_col) > 0.85 * bboxs[j].height)
                     && Iou_max_row > Iou_min_row){
                 bboxs[i].x = Iou_min_row;
                 bboxs[i].y = Iou_min_col;
-                bboxs[i].width = max(bboxs[i].x + bboxs[i].width, bboxs[j].x + bboxs[j].width) - min(bboxs[i].x, bboxs[j].x);
-                bboxs[i].height = max(bboxs[i].y + bboxs[i].height, bboxs[j].y + bboxs[j].height) - min(bboxs[i].y, bboxs[j].y);
+                bboxs[i].width = std::max(bboxs[i].x + bboxs[i].width, bboxs[j].x + bboxs[j].width) - std::min(bboxs[i].x, bboxs[j].x);
+                bboxs[i].height = std::max(bboxs[i].y + bboxs[i].height, bboxs[j].y + bboxs[j].height) - std::min(bboxs[i].y, bboxs[j].y);
                 if (bboxs[i].x < bboxs[j].x){
                     bboxs[i].text = bboxs[i].text + bboxs[j].text;
                 }
@@ -56,7 +70,7 @@ vector<string> OneMoreOperator::list_final_res(vector<vector<vector<Bbox>>>& clu
     vector<string> res;
     int max_row = -1;
     for (int i = 0; i < clusters_col_row.size(); i++){
-        max_row = max(max_row, (int)clusters_col_row[i].size());
+        max_row = std::max(max_row, (int)clusters_col_row[i].size());
     }
 
     for (int i = 0; i < max_row; i++){
@@ -96,7 +110,7 @@ vector<string> OneMoreOperator::list_res(vector<vector<Bbox>>& clusters_col) {
     vector<string> res;
     int max_row = -1;
     for (int i = 0; i < clusters_col.size(); i++){
-        max_row = max(max_row, (int)clusters_col[i].size());
+        max_row = std::max(max_row, (int)clusters_col[i].size());
     }
 
     for (int i = 0; i < max_row; i++){
@@ -151,8 +165,8 @@ void OneMoreOperator::cluster_col_row(vector<vector<Bbox>>& clusters_col, vector
                     continue;
                 }
 
-                int Iou_min = max(tmp_top, copy[m].y);
-                int Iou_max = min(tmp_bottom, copy[m].y + copy[m].height);
+                int Iou_min = std::max(tmp_top, copy[m].y);
+                int Iou_max = std::min(tmp_bottom, copy[m].y + copy[m].height);
 
                 /*cout << "compare: " << copy[j].y << " " << copy[j].text << " " << copy[m].y << " " << copy[m].text << endl;
                 cout << tmp_top << " " << tmp_bottom << endl;
@@ -162,8 +176,8 @@ void OneMoreOperator::cluster_col_row(vector<vector<Bbox>>& clusters_col, vector
                 if ((double)(Iou_max - Iou_min) >= (double)(0.25 * copy[m].height) &&
                         copy[m].y < tmp_top + (tmp_bottom - tmp_top) * 0.5){
                     tmp.push_back(copy[m]);
-                    tmp_top = min(tmp_top, copy[m].y);
-                    tmp_bottom = max(tmp_bottom, copy[m].y + copy[m].height);
+                    tmp_top = std::min(tmp_top, copy[m].y);
+                    tmp_bottom = std::max(tmp_bottom, copy[m].y + copy[m].height);
                     flag[m] = false;
                 }
 
@@ -200,8 +214,8 @@ void OneMoreOperator::cluster_col(vector<Bbox>& bboxs, vector<vector<Bbox>>& clu
             if (!flag[j]){
                 continue;
             }
-            int Iou_min = max(tmp_left, copy[j].x);
-            int Iou_max = min(tmp_right, copy[j].x + copy[j].width);
+            int Iou_min = std::max(tmp_left, copy[j].x);
+            int Iou_max = std::min(tmp_right, copy[j].x + copy[j].width);
 
             /*cout << "compare: " << copy[i].x << " " << copy[i].text << " " << copy[j].x << " " << copy[j].text << endl;
             cout << tmp_left << " " << tmp_right << endl;
@@ -212,8 +226,8 @@ void OneMoreOperator::cluster_col(vector<Bbox>& bboxs, vector<vector<Bbox>>& clu
 
 //                cout << "lianjie: " << copy[j].text << endl;
                 tmp.push_back(copy[j]);
-                tmp_left = min(tmp_left, copy[j].x);
-                tmp_right = max(tmp_right, copy[j].x + copy[j].width);
+                tmp_left = std::min(tmp_left, copy[j].x);
+                tmp_right = std::max(tmp_right, copy[j].x + copy[j].width);
                 flag[j] = false;
             }
         }
@@ -225,7 +239,7 @@ void OneMoreOperator::cluster_col(vector<Bbox>& bboxs, vector<vector<Bbox>>& clu
 }
 
 //按照上和左的位置进行排序
-bool OneMoreOperator::compare(const Bbox a, const Bbox b) {
+bool OneMoreOperator::compare(const Bbox &a, const Bbox &b) {
     if (a.y < b.y)
         return true;
     else if (a.y == b.y)
@@ -234,7 +248,7 @@ bool OneMoreOperator::compare(const Bbox a, const Bbox b) {
         return false;
 }
 
-bool OneMoreOperator::compare_col(const Bbox a, const Bbox b){
+bool OneMoreOperator::compare_col(const Bbox &a, const Bbox &b){
     if (a.x < b.x)
         return true;
     else if (a.x == b.x)
@@ -277,11 +291,11 @@ void OneMoreOperator::filter_illegal(vector<Bbox>& bboxs){
 void OneMoreOperator::filter(vector<Bbox>& bboxs, Big_bbox big_bbox){
     vector<Bbox> tmp;
     for (int i = 0; i < bboxs.size(); i++){
-        int Iou_min_row = max(bboxs[i].x, big_bbox.x);
-        int Iou_max_row = min(bboxs[i].x + bboxs[i].width, big_bbox.x + big_bbox.width);
+        int Iou_min_row = std::max(bboxs[i].x, big_bbox.x);
+        int Iou_max_row = std::min(bboxs[i].x + bboxs[i].width, big_bbox.x + big_bbox.width);
 
-        int Iou_min_col = max(bboxs[i].y, big_bbox.y);
-        int Iou_max_col = min(bboxs[i].y + bboxs[i].height, big_bbox.y + big_bbox.height);
+        int Iou_min_col = std::max(bboxs[i].y, big_bbox.y);
+        int Iou_max_col = std::min(bboxs[i].y + bboxs[i].height, big_bbox.y + big_bbox.height);
 
 //        if (Iou_max_row >= Iou_min_row && Iou_max_col >= Iou_min_col){
 //        增加过滤条件
@@ -350,7 +364,7 @@ vector<string> OneMoreOperator::split_line(string single_line, char symbol) {
 
 //从识别结果的TXT中读取数据到内存
 void OneMoreOperator::ReadDataFromTxt(string filename) {
-    ifstream in(filename);
+    std::ifstream in(filename);
     string line;
     if (in.is_open()) {
         while(getline(in, line)) {
@@ -358,7 +372,7 @@ void OneMoreOperator::ReadDataFromTxt(string filename) {
         }
     }
     else {
-        cout << "no such file! " << endl;
+        std::cout << "no such file! " << std::endl;
     }
 }
 
