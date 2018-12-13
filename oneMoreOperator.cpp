@@ -3,19 +3,196 @@
 //
 #include "header.h"
 
-//集成所需解析box的所有步骤
-void OneMoreOperator::run_result() {
-    filter_illegal(bboxs);
-    splice_adjacent_box(bboxs);
-    cluster_col(bboxs, clusters_col);
-    cluster_col_row(clusters_col, clusters_col_row);
-    vector<string> res = list_res(clusters_col);
-    std::cout << "运算：" << std::endl;
-    for (int i = 0; i < res.size(); i++){
-        std::cout << res[i] << std::endl;
+bool OneMoreOperator::is_in_one_row(Bbox &a, Bbox &b) {
+    bool res = false;
+    int Iou_min = std::max(a.y, b.y);
+    int Iou_max = std::min(a.y + a.height, b.y + b.height);
+    if ((double)(Iou_max - Iou_min) >= 0.75 * a.height || (double)(Iou_max - Iou_min) >= 0.75 * b.height){
+        return true;
+    }
+    return false;
+}
+
+//中间字符串前处理
+void OneMoreOperator::pre_process_mid_res() {
+    vector<string> tmp_mid;
+    for (int i = 0; i < splice_mid_res.size(); i++){
+        int tmp = compute_symbol(splice_mid_res[i])[0];
+        if (tmp != -1){
+            vector<string> split_tmp = split_line(splice_mid_res[i], oper_str[tmp][0]);
+            for (int j = 0; j < split_tmp.size(); j++){
+                tmp_mid.push_back(split_tmp[j]);
+            }
+        }
+        else {
+            tmp_mid.push_back(splice_mid_res[i]);
+        }
+    }
+    splice_mid_res.clear();
+    splice_mid_res = tmp_mid;
+}
+
+vector<int> OneMoreOperator::compute_symbol(string a) {
+    vector<int> res;
+    for (int i = 0; i < oper_str.size(); i++){
+        for (int j = 0; j < a.length(); j++){
+            if (a[j] == oper_str[i][0]){
+                res.push_back(i);
+                res.push_back(j);
+                return res;
+            }
+        }
+    }
+    return res;
+}
+
+bool OneMoreOperator::is_compute_symbol(string a) {
+    bool res = false;
+    for (int i = 0; i < oper_str.size(); i++){
+        if (a == oper_str[i]){
+            return true;
+        }
+    }
+    return res;
+}
+
+void OneMoreOperator::find_oper_equal() {
+    vector<int> tmp_oper;
+    vector<bool> tmp_equal;
+    for (int i = 0; i < splice_mid_res.size(); i++){
+//        查找是否存在运算符号
+        for (int j = 0; j < splice_mid_res[i].length(); j++){
+            for (int m = 0; m < one_more_oper.size(); m++){
+                if (splice_mid_res[i][j] == one_more_oper[m]){
+                    tmp_oper.push_back(m);
+                }
+            }
+            if (splice_mid_res[i][j] == '='){
+                tmp_equal.push_back(true);
+            }
+        }
+        //这一个算式没有找到运算符
+        if (tmp_oper.empty()){
+            tmp_oper.push_back(-1);
+        }
+        //这一个算式没有找到等号
+        if (tmp_equal.empty()){
+            tmp_equal.push_back(false);
+        }
+        find_oper.push_back(tmp_oper);
+        tmp_oper.clear();
+        find_equal.push_back(tmp_equal);
+        tmp_equal.clear();
     }
 }
 
+//拆分组好的string，添加运算符号，到新的数据结构
+void OneMoreOperator::process_str_res() {
+    vector<string> tmp_res;
+    for (int i = 0; i < splice_mid_res.size(); i++){
+        if (find_oper[i][0] == -1){
+            cout << "未找到运算符号；" << endl;
+            continue;
+        }
+        vector<string> stem = split_line(splice_mid_res[i], ' ');
+        vector<bool> flag(stem.size(), true);
+        for (int j = 0, m = 0; j < stem.size() && m < find_oper[i].size(); j++){
+            std::stringstream stream;
+            stream << one_more_oper[find_oper[i][m]];
+            string tmp_str = stream.str();
+            if (flag[j] && stem[j] == tmp_str){
+                //判断符号的上一个字符串不越界且不是符号
+                if (j >= 1 && !is_compute_symbol(stem[j - 1])){
+                    tmp_res.push_back(stem[j - 1]);
+                    //判断符号的下一个字符串不越界且不是符号
+                    if (j + 1 < stem.size() && !is_compute_symbol(stem[j + 1])){
+                        tmp_res.push_back(tmp_str);
+                        tmp_res.push_back(stem[j + 1]);
+                        if (j + 2 < stem.size() && stem[j + 2] == "="){
+                            //式子最后结果不越界且不是符号
+                            if (j + 3 < stem.size() && !is_compute_symbol(stem[j + 3])){
+                                tmp_res.push_back("=");
+                                tmp_res.push_back(stem[j + 3]);
+                            }
+                        }
+                        else if (j + 2 < stem.size() && !is_compute_symbol(stem[j + 2])){
+                            tmp_res.push_back("=");
+                            tmp_res.push_back(stem[j + 2]);
+                        }
+                    }
+                }
+                flag[j] = false;
+            }
+            //如果是一个完整的式子
+            if (tmp_res.size() == 5){
+                splice_res.push_back(tmp_res);
+                m++;
+            }
+            tmp_res.clear();
+        }
+    }
+}
+
+//重新整理输出结构体
+void OneMoreOperator::arrange_res() {
+    Res tmp_res;
+    for (int i = 0; i < result_boxs.size(); i++){
+        tmp_res.x = result_boxs[i].x;
+        tmp_res.y = result_boxs[i].y;
+        tmp_res.width = result_boxs[i].width;
+        tmp_res.height = result_boxs[i].height;
+        if (i < splice_res.size()){
+            tmp_res.splice_result = splice_res[i];
+            if (!tmp_res.splice_result.empty()){
+                final_res.push_back(tmp_res);
+            }
+        }
+    }
+}
+
+//集成所需解析box的所有步骤
+void OneMoreOperator::run_result() {
+    filter_illegal(bboxs);
+//    splice_adjacent_box(bboxs);
+    cluster_col(bboxs, clusters_col);
+    /*for (int i = 0; i < clusters_col.size(); i++){
+        cout << "第" << i << "列：" << endl;
+        for (int j = 0; j < clusters_col[i].size(); j++){
+            cout << clusters_col[i][j].text << " ";
+        }
+        cout << endl;
+    }*/
+    cluster_col_row(clusters_col, clusters_col_row);
+    /*for (int i = 0; i < clusters_col_row.size(); i++){
+        for (int j = 0; j < clusters_col_row[i].size(); j++){
+            for (int m = 0; m < clusters_col_row[i][j].size(); m++){
+                cout << clusters_col_row[i][j][m].text << " ";
+            }
+        }
+        cout << endl;
+    }
+    cout << endl;*/
+//    list_res(clusters_col, splice_mid_res);
+    list_res(clusters_col_row, splice_mid_res);
+//    pre_process_mid_res();
+    /*std::cout << "运算式：" << std::endl;
+    for (int i = 0; i < splice_mid_res.size(); i++){
+        std::cout << splice_mid_res[i] << std::endl;
+    }
+    std::cout << "输出运算式结束；" << endl;*/
+    /*if (splice_mid_res.size() < result_boxs.size()){
+        cout << "bbox的数量异常多；" << endl;
+        //return;
+    }*/
+
+    if (result_boxs.size() % splice_mid_res.size() != 0){
+        cout << "式子中有缺少；" << endl;
+        //return;
+    }
+    find_oper_equal();
+    process_str_res();
+    arrange_res();
+}
 
 //连接紧挨着的Bbox
 void OneMoreOperator::splice_adjacent_box(vector<Bbox>& bboxs){
@@ -74,7 +251,6 @@ vector<string> OneMoreOperator::list_final_res(vector<vector<vector<Bbox>>>& clu
     }
 
     for (int i = 0; i < max_row; i++){
-
         for (int j = 0; j < clusters_col_row.size(); j++){
             if (clusters_col_row[j].empty()){
                 continue;
@@ -105,43 +281,159 @@ vector<string> OneMoreOperator::list_final_res(vector<vector<vector<Bbox>>>& clu
 }
 
 //用字符串展示一拖多的结果
-vector<string> OneMoreOperator::list_res(vector<vector<Bbox>>& clusters_col) {
+void OneMoreOperator::list_res(vector<vector<vector<Bbox>>> &clusters_col_row, vector<string> &splice_res) {
     string tmp = "";
     vector<string> res;
+    //记录最大列
     int max_row = -1;
-    for (int i = 0; i < clusters_col.size(); i++){
-        max_row = std::max(max_row, (int)clusters_col[i].size());
+    //记录最大列的第一个索引
+    int max_row_col = -1;
+    vector<bool> tmp_hand_write;
+    for (int i = 0; i < clusters_col_row.size(); i++){
+        if ((int)clusters_col_row[i].size() > max_row){
+            max_row = (int)clusters_col_row[i].size();
+            max_row_col = i;
+        }
     }
 
     for (int i = 0; i < max_row; i++){
-
-        for (int j = 0; j < clusters_col.size(); j++){
-            if (clusters_col[j].empty()){
+        for (int j = 0; j < clusters_col_row.size(); j++){
+            if (clusters_col_row[j].empty()){
                 continue;
             }
-            if (clusters_col[j].size() == 1){
-                tmp += " ";
-                tmp += clusters_col[j][0].text;
+            //这一列只有一个bbox
+            if (clusters_col_row[j].size() == 1){
+                for (int m = 0; m < clusters_col_row[j][0].size(); m++){
+                    tmp += " ";
+                    tmp += clusters_col_row[j][0][m].text;
+                    if (clusters_col_row[j][0][m].class_idx == 101){
+                        result_boxs.push_back(clusters_col_row[j][0][m]);
+                        tmp_hand_write.push_back(true);
+                    }
+                    else {
+                        tmp_hand_write.push_back(false);
+                    }
+                }
             }
-            else if (clusters_col[j].size() > i){
-                tmp += " ";
-                tmp += clusters_col[j][i].text;
+                //这一列的行数与最大行数一致
+            else if (clusters_col_row[j].size() == max_row){
+                for (int m = 0; m < clusters_col_row[j][i].size(); m++){
+                    tmp += " ";
+                    tmp += clusters_col_row[j][i][m].text;
+                    if (clusters_col_row[j][i][m].class_idx == 101){
+                        result_boxs.push_back(clusters_col_row[j][i][m]);
+                        tmp_hand_write.push_back(true);
+                    }
+                    else {
+                        tmp_hand_write.push_back(false);
+                    }
+                }
             }
-//            else if (clusters_col[j].size() <= i){
-//                tmp += " ";
-//                tmp += clusters_col[j].back().text;
-//            }
+                //这一列的行数小于最大行数，且不止有一个bbox，这一列就有可能是缺失bbox的情况
+            else if (clusters_col_row[j].size() < max_row){
+                for (int index = 0; index < clusters_col_row[j].size(); index++){
+                    if (!clusters_col_row[j][index].empty() && !clusters_col_row[max_row_col][i].empty()
+                        && is_in_one_row(clusters_col_row[j][index][0], clusters_col_row[max_row_col][i][0])){
+                        for (int m = 0; m < clusters_col_row[j][index].size(); m++){
+                            tmp += " ";
+                            tmp += clusters_col_row[j][index][m].text;
+                            if (clusters_col_row[j][index][m].class_idx == 101){
+                                result_boxs.push_back(clusters_col_row[j][index][m]);
+                                tmp_hand_write.push_back(true);
+                            }
+                            else {
+                                tmp_hand_write.push_back(false);
+                            }
+                        }
+
+                    }
+                }
+            }
         }
 //        删除第一个空格字符
         if (tmp.length() > 1 && tmp[0] == ' '){
             tmp.erase(0, 1);
         }
-        res.push_back(tmp);
+        splice_res.push_back(tmp);
         tmp = "";
+        hand_write_index.push_back(tmp_hand_write);
+        tmp_hand_write.clear();
+    }
+}
+
+//用字符串展示一拖多的结果
+void OneMoreOperator::list_res(vector<vector<Bbox>>& clusters_col, vector<string> &splice_res) {
+    string tmp = "";
+    vector<string> res;
+    //记录最大列
+    int max_row = -1;
+    //记录最大列的第一个索引
+    int max_row_col = -1;
+    vector<bool> tmp_hand_write;
+    for (int i = 0; i < clusters_col.size(); i++){
+        if ((int)clusters_col[i].size() > max_row){
+            max_row = (int)clusters_col[i].size();
+            max_row_col = i;
+        }
     }
 
-    return res;
+    for (int i = 0; i < max_row; i++){
+        for (int j = 0; j < clusters_col.size(); j++){
+            if (clusters_col[j].empty()){
+                continue;
+            }
+            //这一列只有一个bbox
+            if (clusters_col[j].size() == 1){
+                tmp += " ";
+                tmp += clusters_col[j][0].text;
+                if (clusters_col[j][0].class_idx == 101){
+                    result_boxs.push_back(clusters_col[j][0]);
+                    tmp_hand_write.push_back(true);
+                }
+                else {
+                    tmp_hand_write.push_back(false);
+                }
+            }
+            //这一列的行数与最大行数一致
+            else if (clusters_col[j].size() == max_row){
+                tmp += " ";
+                tmp += clusters_col[j][i].text;
+                if (clusters_col[j][i].class_idx == 101){
+                    result_boxs.push_back(clusters_col[j][i]);
+                    tmp_hand_write.push_back(true);
+                }
+                else {
+                    tmp_hand_write.push_back(false);
+                }
+            }
+            //这一列的行数小于最大行数，且不止有一个bbox，这一列就有可能是缺失bbox的情况
+            else if (clusters_col[j].size() < max_row){
+                for (int index = 0; index < clusters_col[j].size(); index++){
+                    if (is_in_one_row(clusters_col[j][index], clusters_col[max_row_col][i])){
+                        tmp += " ";
+                        tmp += clusters_col[j][index].text;
+                        if (clusters_col[j][index].class_idx == 101){
+                            result_boxs.push_back(clusters_col[j][index]);
+                            tmp_hand_write.push_back(true);
+                        }
+                        else {
+                            tmp_hand_write.push_back(false);
+                        }
+                    }
+                }
+            }
+        }
+//        删除第一个空格字符
+        if (tmp.length() > 1 && tmp[0] == ' '){
+            tmp.erase(0, 1);
+        }
+        splice_res.push_back(tmp);
+        tmp = "";
+        hand_write_index.push_back(tmp_hand_write);
+        tmp_hand_write.clear();
+    }
 }
+
 
 //对列里面的Bbox再一次行聚类，合并列中同一行的Bbox
 void OneMoreOperator::cluster_col_row(vector<vector<Bbox>>& clusters_col, vector<vector<vector<Bbox>>>& clusters_col_row){
@@ -200,8 +492,7 @@ void OneMoreOperator::cluster_col(vector<Bbox>& bboxs, vector<vector<Bbox>>& clu
     sort(copy.begin(), copy.end(), compare_col);
     vector<bool> flag(copy.size(), true);
     vector<Bbox> tmp;
-    for (int i = 0; i < copy.size(); i++)
-    {
+    for (int i = 0; i < copy.size(); i++) {
         if (!flag[i]){
             continue;
         }
@@ -232,6 +523,7 @@ void OneMoreOperator::cluster_col(vector<Bbox>& bboxs, vector<vector<Bbox>>& clu
             }
         }
         sort(tmp.begin(), tmp.end(), [](const Bbox &a, const Bbox &b){return a.y < b.y;});
+//        sort(tmp.begin(), tmp.end(), compare_col);
         clusters_col.push_back(tmp);
         tmp.clear();
     }
@@ -342,7 +634,6 @@ void OneMoreOperator::analysis(vector<string>& file_content, vector<Bbox>& bboxs
             }
 
         }
-
     }
     sort(bboxs.begin(), bboxs.end(), compare);
     sort(big_bboxs.begin(), big_bboxs.end(), [](const Big_bbox &a, const Big_bbox &b){return a.y < b.y;});
@@ -375,4 +666,3 @@ void OneMoreOperator::ReadDataFromTxt(string filename) {
         std::cout << "no such file! " << std::endl;
     }
 }
-
